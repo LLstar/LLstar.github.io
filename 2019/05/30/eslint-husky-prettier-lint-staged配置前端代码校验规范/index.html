@@ -3,15 +3,13 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-
-  
-  <title>eslint-husky-prettier-lint-staged配置前端代码校验规范 | Hexo</title>
+  <title>eslint-husky-prettier-lint-staged配置前端代码校验规范 | 马璐璐的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="配置文件1、在前端应用中的package.json中新增如下文件：123456789101112131415161718192021222324&amp;#123;  &quot;scripts&quot;: &amp;#123;    &quot;precommit&quot;: &quot;lint-staged&quot;  &amp;#125;,  &quot;lint-staged&quot;: &amp;#123;    &quot;src/**/*.js&quot;: [      &quot;eslint --fix -">
 <meta property="og:type" content="article">
 <meta property="og:title" content="eslint-husky-prettier-lint-staged配置前端代码校验规范">
 <meta property="og:url" content="http://yoursite.com/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="马璐璐的个人博客">
 <meta property="og:description" content="配置文件1、在前端应用中的package.json中新增如下文件：123456789101112131415161718192021222324&amp;#123;  &quot;scripts&quot;: &amp;#123;    &quot;precommit&quot;: &quot;lint-staged&quot;  &amp;#125;,  &quot;lint-staged&quot;: &amp;#123;    &quot;src/**/*.js&quot;: [      &quot;eslint --fix -">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2019-05-30T04:07:27.691Z">
@@ -19,59 +17,229 @@
 <meta name="twitter:title" content="eslint-husky-prettier-lint-staged配置前端代码校验规范">
 <meta name="twitter:description" content="配置文件1、在前端应用中的package.json中新增如下文件：123456789101112131415161718192021222324&amp;#123;  &quot;scripts&quot;: &amp;#123;    &quot;precommit&quot;: &quot;lint-staged&quot;  &amp;#125;,  &quot;lint-staged&quot;: &amp;#123;    &quot;src/**/*.js&quot;: [      &quot;eslint --fix -">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="马璐璐的个人博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
   
   
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
   
   <link rel="stylesheet" href="/css/style.css">
-</head>
-</html>
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet">
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head></html>
 <body>
   <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">LLstar</a></h1>
+        </hgroup>
+
+        
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">Home</a></li>
+                        
+                            <li><a href="/about/">About</a></li>
+                        
+                            <li><a href="/archives/">Archives</a></li>
+                        
+                            <li><a href="/tags/">Tags</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                            
+                                <a class="fl weibo" target="_blank" href="#" title="weibo">weibo</a>
+                            
+                                <a class="fl google" target="_blank" href="#" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="#" title="twitter">twitter</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://luuman.github.io/">name</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">LLstar</a></h1>
       </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">LLstar</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">Home</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/tags/">Tags</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=PAkNDgsKBQ4MCnxNTRJfU1E" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/luuman" title="github">github</a>
+                    
+                        <a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                    
+                        <a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+                    
+                        <a class="google" target="_blank" href="#" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="#" title="twitter">twitter</a>
+                    
+                        <a class="linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                    
+                </div>
+            </nav>
+        </header>                
     </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-eslint-husky-prettier-lint-staged配置前端代码校验规范" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/" class="article-date">
-  <time datetime="2019-05-30T04:06:26.000Z" itemprop="datePublished">2019-05-30</time>
+</nav>
+      <div class="body-wrap"><article id="post-eslint-husky-prettier-lint-staged配置前端代码校验规范" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/" class="article-date">
+      <time datetime="2019-05-30T04:06:26.000Z" itemprop="datePublished">2019-05-30</time>
 </a>
-    
-  </div>
+    </div>
+  
   <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -83,9 +251,18 @@
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
     
     <div class="article-entry" itemprop="articleBody">
       
+          
         <h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><h5 id="1、在前端应用中的package-json中新增如下文件："><a href="#1、在前端应用中的package-json中新增如下文件：" class="headerlink" title="1、在前端应用中的package.json中新增如下文件："></a>1、在前端应用中的package.json中新增如下文件：</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"precommit"</span>: <span class="string">"lint-staged"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"lint-staged"</span>: &#123;</span><br><span class="line">    <span class="string">"src/**/*.js"</span>: [</span><br><span class="line">      <span class="string">"eslint --fix --ext .js"</span>,</span><br><span class="line">      <span class="string">"prettier --write"</span>,</span><br><span class="line">      <span class="string">"git add"</span></span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"devDependencies"</span>: &#123;</span><br><span class="line">    <span class="string">"eslint"</span>: <span class="string">"^5.0.0"</span>,</span><br><span class="line">    <span class="string">"eslint-config-ali"</span>: <span class="string">"^2.0.1"</span>,</span><br><span class="line">    <span class="string">"eslint-plugin-import"</span>: <span class="string">"^2.6.0"</span>,</span><br><span class="line">    <span class="string">"eslint-plugin-react"</span>: <span class="string">"^7.1.0"</span>,</span><br><span class="line">    <span class="string">"husky"</span>: <span class="string">"^0.14.2"</span>,</span><br><span class="line">    <span class="string">"babel-eslint"</span>: <span class="string">"^8.1.1"</span>,</span><br><span class="line">    <span class="string">"lint-staged"</span>: <span class="string">"^4.0.0"</span>,</span><br><span class="line">    <span class="string">"prettier"</span>:<span class="string">"^1.16.4"</span>,</span><br><span class="line">    <span class="string">"eslint-plugin-prettier"</span>:<span class="string">"^3.0.1"</span>,</span><br><span class="line">    <span class="string">"eslint-config-prettier"</span>:<span class="string">"^4.0.0"</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h5 id="2、增加-eslintrc-js-扫描规则："><a href="#2、增加-eslintrc-js-扫描规则：" class="headerlink" title="2、增加 .eslintrc.js 扫描规则："></a>2、增加 .eslintrc.js 扫描规则：</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="string">"extends"</span>: [<span class="string">"eslint-config-ali"</span>,<span class="string">"prettier"</span>, <span class="string">"plugin:prettier/recommended"</span>],</span><br><span class="line">  <span class="string">"parser"</span>: <span class="string">"babel-eslint"</span>,</span><br><span class="line">  <span class="string">"rules"</span>: &#123;</span><br><span class="line">    <span class="string">"prettier/prettier"</span>: <span class="string">"error"</span>,</span><br><span class="line">    <span class="string">"strict"</span>: <span class="string">"off"</span>,</span><br><span class="line">    <span class="string">"no-console"</span>: <span class="string">"off"</span>,</span><br><span class="line">    <span class="string">"import/no-dynamic-require"</span>: <span class="string">"off"</span>,</span><br><span class="line">    <span class="string">"global-require"</span>: <span class="string">"off"</span>,</span><br><span class="line">    <span class="string">"require-yield"</span>: <span class="string">"off"</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"plugins"</span>: [<span class="string">"prettier"</span>],</span><br><span class="line">  <span class="string">"globals"</span>: &#123;</span><br><span class="line">    <span class="string">"React"</span>: <span class="string">"readable"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -138,21 +315,82 @@
 <p>参考文章：<a href="https://juejin.im/post/5c67fcaae51d457fcb4078c9" target="_blank" rel="noopener">https://juejin.im/post/5c67fcaae51d457fcb4078c9</a> </p>
 
       
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫">
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝"></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信"></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
     </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/" data-id="cjwa9ipk60001xku8vvrsdmpy" class="article-share-link">Share</a>
-      
-      
-    </footer>
+    
   </div>
   
     
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/">eslint-husky-prettier-lint-staged配置前端代码校验规范</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 LLstar 的个人博客">LLstar</a></p>
+        <p><span>发布时间:</span>2019年05月30日 - 12时06分</p>
+        <p><span>最后更新:</span>2019年05月30日 - 12时07分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/" title="eslint-husky-prettier-lint-staged配置前端代码校验规范">http://yoursite.com/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/　　作者: LLstar" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target="_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
 <nav id="article-nav">
   
   
     <a href="/2019/05/30/New-Post/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">New Post</div>
+      <strong class="article-nav-caption">></strong>
     </a>
   
 </nav>
@@ -160,82 +398,201 @@
   
 </article>
 
-</section>
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#配置文件"><span class="toc-number">1.</span> <span class="toc-text">配置文件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1、在前端应用中的package-json中新增如下文件："><span class="toc-number">1.0.1.</span> <span class="toc-text">1、在前端应用中的package.json中新增如下文件：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2、增加-eslintrc-js-扫描规则："><span class="toc-number">1.0.2.</span> <span class="toc-text">2、增加 .eslintrc.js 扫描规则：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3、增加-prettierrc-js-文件，用于在扫描通过后格式化代码-该步骤可选，如果不引入prettier的话，相应的在package和eslint中去除掉相应配置即可"><span class="toc-number">1.0.3.</span> <span class="toc-text">3、增加 .prettierrc.js 文件，用于在扫描通过后格式化代码(该步骤可选，如果不引入prettier的话，相应的在package和eslint中去除掉相应配置即可)</span></a></li></ol></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#实现原理"><span class="toc-number">2.</span> <span class="toc-text">实现原理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1、执行流程"><span class="toc-number">2.0.1.</span> <span class="toc-text">1、执行流程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2、插件说明"><span class="toc-number">2.0.2.</span> <span class="toc-text">2、插件说明</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#eslint"><span class="toc-number">2.0.2.1.</span> <span class="toc-text">eslint</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#husky"><span class="toc-number">2.0.2.2.</span> <span class="toc-text">husky</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#lint-staged"><span class="toc-number">2.0.2.3.</span> <span class="toc-text">lint-staged</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#prettier"><span class="toc-number">2.0.2.4.</span> <span class="toc-text">prettier</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#附加内容"><span class="toc-number">3.</span> <span class="toc-text">附加内容</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#editorconfig介绍"><span class="toc-number">3.0.1.</span> <span class="toc-text">editorconfig介绍</span></a></li></ol></li>
+</div>
+<input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'luuman',
+      repo: 'luuman.github.io',
+      oauth: {
+        client_id: '',
+        client_secret: '',
+      },
+    })
+    gitment.render('gitments')
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
         
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li></ul>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2019/05/30/New-Post/" title="下一篇: New Post">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
     </div>
-  </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/">eslint-husky-prettier-lint-staged配置前端代码校验规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/30/New-Post/">New Post</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/30/hello-world/">Hello World</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/">eslint-husky-prettier-lint-staged配置前端代码校验规范</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/30/New-Post/">New Post</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/30/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
 
-  
-</aside>
+    <script>
         
-      </div>
+    </script>
+</div>
       <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2019 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019 LLstar
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style="display:none">
+                        <span id="site-visit">海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style="display:none">
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
     </div>
-  </div>
 </footer>
+
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
 
 
-<script src="/js/script.js"></script>
 
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
 
 
   </div>
