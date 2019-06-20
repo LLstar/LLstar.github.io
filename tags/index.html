@@ -390,6 +390,22 @@
 
 
     
+        <div id="gitments"></div>
+<script src="https://www.wenjunjiang.win/js/gitment.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'LLstar',
+      repo: 'https://LLstar.github.io',
+      oauth: {
+          client_id: '503223b8d61a488c660d',
+          client_secret: '81e61fa4fd1e6f2f10118b341d02d56ac29bc59e',
+      },
+    })
+    gitment.render('gitments')
+</script>
+
+    
 
 
 
