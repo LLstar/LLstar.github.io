@@ -3,19 +3,19 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>LLstar的个人博客</title>
+  <title>eslint+husky+prettier+lint-staged配置前端代码校验规范 | LLstar的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="eslint-husky-prettier-lint-staged配置前端代码校验规范配置文件npm包安装12$ npm i -D eslint prettier eslint-plugin-prettier eslint-config-prettier husky lint-staged$ yarn add eslint prettier eslint-plugin-prettier eslin">
+  <meta name="description" content="当团队中多人协作时，因为同事之间不同的代码风格和编辑器，会导致项目的代码无法统一风格，不利于阅读，也更容易造成bug，为统一项目中代码的风格，减少书写上的bug，所以整理了一下利用 eslint+husky+prettier+lint-staged来配置前端代码规范。 配置文件npm包安装12$ npm i -D eslint prettier eslint-plugin-prettier esl">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LLstar的个人博客">
+<meta property="og:title" content="eslint+husky+prettier+lint-staged配置前端代码校验规范">
 <meta property="og:url" content="http://yoursite.com/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/index.html">
 <meta property="og:site_name" content="LLstar的个人博客">
-<meta property="og:description" content="eslint-husky-prettier-lint-staged配置前端代码校验规范配置文件npm包安装12$ npm i -D eslint prettier eslint-plugin-prettier eslint-config-prettier husky lint-staged$ yarn add eslint prettier eslint-plugin-prettier eslin">
+<meta property="og:description" content="当团队中多人协作时，因为同事之间不同的代码风格和编辑器，会导致项目的代码无法统一风格，不利于阅读，也更容易造成bug，为统一项目中代码的风格，减少书写上的bug，所以整理了一下利用 eslint+husky+prettier+lint-staged来配置前端代码规范。 配置文件npm包安装12$ npm i -D eslint prettier eslint-plugin-prettier esl">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-20T01:54:40.845Z">
+<meta property="og:updated_time" content="2019-06-20T06:36:39.752Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LLstar的个人博客">
-<meta name="twitter:description" content="eslint-husky-prettier-lint-staged配置前端代码校验规范配置文件npm包安装12$ npm i -D eslint prettier eslint-plugin-prettier eslint-config-prettier husky lint-staged$ yarn add eslint prettier eslint-plugin-prettier eslin">
+<meta name="twitter:title" content="eslint+husky+prettier+lint-staged配置前端代码校验规范">
+<meta name="twitter:description" content="当团队中多人协作时，因为同事之间不同的代码风格和编辑器，会导致项目的代码无法统一风格，不利于阅读，也更容易造成bug，为统一项目中代码的风格，减少书写上的bug，所以整理了一下利用 eslint+husky+prettier+lint-staged来配置前端代码规范。 配置文件npm包安装12$ npm i -D eslint prettier eslint-plugin-prettier esl">
   
     <link rel="alternative" href="/atom.xml" title="LLstar的个人博客" type="application/atom+xml">
   
@@ -66,6 +66,10 @@
         
         <p class="header-subtitle">welcome to my blog!</p>
         
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="search" placeholder=" Search...">
+            </form>
         
         
 
@@ -186,10 +190,35 @@
       <input type="hidden" class="isFancy">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      eslint+husky+prettier+lint-staged配置前端代码校验规范
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/前端配置/">前端配置</a>
+    </div>
+
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="eslint-husky-prettier-lint-staged配置前端代码校验规范"><a href="#eslint-husky-prettier-lint-staged配置前端代码校验规范" class="headerlink" title="eslint-husky-prettier-lint-staged配置前端代码校验规范"></a>eslint-husky-prettier-lint-staged配置前端代码校验规范</h2><h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><h4 id="npm包安装"><a href="#npm包安装" class="headerlink" title="npm包安装"></a>npm包安装</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm i -D eslint prettier eslint-plugin-prettier eslint-config-prettier husky lint-staged</span><br><span class="line">$ yarn add eslint prettier eslint-plugin-prettier eslint-config-prettier husky lint-staged -D</span><br></pre></td></tr></table></figure>
+        <p>当团队中多人协作时，因为同事之间不同的代码风格和编辑器，会导致项目的代码无法统一风格，不利于阅读，也更容易造成bug，为统一项目中代码的风格，减少书写上的bug，所以整理了一下利用 eslint+husky+prettier+lint-staged来配置前端代码规范。</p>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><h4 id="npm包安装"><a href="#npm包安装" class="headerlink" title="npm包安装"></a>npm包安装</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm i -D eslint prettier eslint-plugin-prettier eslint-config-prettier husky lint-staged</span><br><span class="line">$ yarn add eslint prettier eslint-plugin-prettier eslint-config-prettier husky lint-staged -D</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
 
 <h5 id="1、在前端应用中的package-json中新增如下文件："><a href="#1、在前端应用中的package-json中新增如下文件：" class="headerlink" title="1、在前端应用中的package.json中新增如下文件："></a>1、在前端应用中的package.json中新增如下文件：</h5><ul>
 <li>在scripts中直接写“precommit”会报错，解决方案是：</li>
@@ -298,12 +327,12 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/"></a></p>
+        <p><span>本文标题:</span><a href="/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/">eslint+husky+prettier+lint-staged配置前端代码校验规范</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 LLstar 的个人博客">LLstar</a></p>
         <p><span>发布时间:</span>2019年05月30日 - 12时06分</p>
-        <p><span>最后更新:</span>2019年06月20日 - 09时54分</p>
+        <p><span>最后更新:</span>2019年06月20日 - 14时36分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/" title>http://yoursite.com/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/</a>
+            <span>原始链接:</span><a class="post-url" href="/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/" title="eslint+husky+prettier+lint-staged配置前端代码校验规范">http://yoursite.com/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/　　作者: LLstar" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
@@ -318,8 +347,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2019/05/30/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2019/05/30/利用hexo搭建自己的博客/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">利用hexo搭建自己的博客</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -330,7 +359,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#eslint-husky-prettier-lint-staged配置前端代码校验规范"><span class="toc-number">1.</span> <span class="toc-text">eslint-husky-prettier-lint-staged配置前端代码校验规范</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#配置文件"><span class="toc-number">1.1.</span> <span class="toc-text">配置文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#npm包安装"><span class="toc-number">1.1.1.</span> <span class="toc-text">npm包安装</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1、在前端应用中的package-json中新增如下文件："><span class="toc-number">1.1.1.1.</span> <span class="toc-text">1、在前端应用中的package.json中新增如下文件：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2、增加-eslintrc-js-扫描规则："><span class="toc-number">1.1.1.2.</span> <span class="toc-text">2、增加 .eslintrc.js 扫描规则：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3、增加-prettierrc-js-文件，用于在扫描通过后格式化代码-该步骤可选，如果不引入prettier的话，相应的在package和eslint中去除掉相应配置即可"><span class="toc-number">1.1.1.3.</span> <span class="toc-text">3、增加 .prettierrc.js 文件，用于在扫描通过后格式化代码(该步骤可选，如果不引入prettier的话，相应的在package和eslint中去除掉相应配置即可)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现原理"><span class="toc-number">1.2.</span> <span class="toc-text">实现原理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1、执行流程"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">1、执行流程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2、插件说明"><span class="toc-number">1.2.0.2.</span> <span class="toc-text">2、插件说明</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#eslint"><span class="toc-number">1.2.0.2.1.</span> <span class="toc-text">eslint</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#husky"><span class="toc-number">1.2.0.2.2.</span> <span class="toc-text">husky</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#lint-staged"><span class="toc-number">1.2.0.2.3.</span> <span class="toc-text">lint-staged</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#prettier"><span class="toc-number">1.2.0.2.4.</span> <span class="toc-text">prettier</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#附加内容"><span class="toc-number">1.3.</span> <span class="toc-text">附加内容</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#editorconfig介绍"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">editorconfig介绍</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#配置文件"><span class="toc-number">1.</span> <span class="toc-text">配置文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#npm包安装"><span class="toc-number">1.1.</span> <span class="toc-text">npm包安装</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1、在前端应用中的package-json中新增如下文件："><span class="toc-number">1.1.1.</span> <span class="toc-text">1、在前端应用中的package.json中新增如下文件：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2、增加-eslintrc-js-扫描规则："><span class="toc-number">1.1.2.</span> <span class="toc-text">2、增加 .eslintrc.js 扫描规则：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3、增加-prettierrc-js-文件，用于在扫描通过后格式化代码-该步骤可选，如果不引入prettier的话，相应的在package和eslint中去除掉相应配置即可"><span class="toc-number">1.1.3.</span> <span class="toc-text">3、增加 .prettierrc.js 文件，用于在扫描通过后格式化代码(该步骤可选，如果不引入prettier的话，相应的在package和eslint中去除掉相应配置即可)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现原理"><span class="toc-number">2.</span> <span class="toc-text">实现原理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1、执行流程"><span class="toc-number">2.0.1.</span> <span class="toc-text">1、执行流程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2、插件说明"><span class="toc-number">2.0.2.</span> <span class="toc-text">2、插件说明</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#eslint"><span class="toc-number">2.0.2.1.</span> <span class="toc-text">eslint</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#husky"><span class="toc-number">2.0.2.2.</span> <span class="toc-text">husky</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#lint-staged"><span class="toc-number">2.0.2.3.</span> <span class="toc-text">lint-staged</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#prettier"><span class="toc-number">2.0.2.4.</span> <span class="toc-text">prettier</span></a></li></ol></li></ol></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#附加内容"><span class="toc-number">3.</span> <span class="toc-text">附加内容</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#editorconfig介绍"><span class="toc-number">3.0.1.</span> <span class="toc-text">editorconfig介绍</span></a></li></ol></li>
 </div>
 <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
 
@@ -400,12 +429,12 @@
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/05/30/hello-world/" title="下一篇: Hello World">
+            <a href="/2019/05/30/利用hexo搭建自己的博客/" title="下一篇: 利用hexo搭建自己的博客">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/">eslint-husky-prettier-lint-staged配置前端代码校验规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/30/hello-world/">Hello World</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/">eslint+husky+prettier+lint-staged配置前端代码校验规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/30/利用hexo搭建自己的博客/">利用hexo搭建自己的博客</a></li></ul>
     <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
@@ -445,7 +474,7 @@
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style="display:none">
-                        <span id="site-visit">海贼到访数: 
+                        <span id="site-visit">星星到访数: 
                             <span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
@@ -524,6 +553,23 @@
     });
 </script>
 
+
+    <script type="text/javascript">
+      window.onload = function(){
+        document.getElementById("search").onclick = function(){
+            console.log("search")
+            search();
+        }
+      }
+      function search(){
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
+      }
+    </script>
 
   </div>
 </body>

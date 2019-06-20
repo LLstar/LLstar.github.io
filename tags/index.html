@@ -67,6 +67,10 @@
         <p class="header-subtitle">welcome to my blog!</p>
         
         
+            <form>
+                <input type="text" class="st-default-search-input search" id="search" placeholder=" Search...">
+            </form>
+        
         
 
         <div id="switch-area" class="switch-area">
@@ -244,7 +248,7 @@
     <!-- Tag Cloud Page -->
     <hr>
     <br>
-    
+    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端配置/">前端配置</a><span class="category-list-count">1</span></li></ul>
 
     <p class="count"></p>
 
@@ -424,7 +428,7 @@
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style="display:none">
-                        <span id="site-visit">海贼到访数: 
+                        <span id="site-visit">星星到访数: 
                             <span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
@@ -503,6 +507,23 @@
     });
 </script>
 
+
+    <script type="text/javascript">
+      window.onload = function(){
+        document.getElementById("search").onclick = function(){
+            console.log("search")
+            search();
+        }
+      }
+      function search(){
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
+      }
+    </script>
 
   </div>
 </body>
