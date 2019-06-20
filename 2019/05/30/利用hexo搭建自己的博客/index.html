@@ -417,22 +417,24 @@
 
 
     
-      <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<div id="gitalk-container"></div>
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-<script type="text/javascript">
-    var gitalk = new Gitalk({
-        clientID: '',
-        clientSecret: '',
-        id: window.location.pathname,
-        repo: 'https://LLstar.github.io',
-        owner: 'LLstar',
-        admin: ''
-    })
-    gitalk.render('gitalk-container')
-</script>
+      <div class="gitalk">
+    <div id="gitalk-container"></div>
+    <script type="text/javascript">
+        const gitalk = new Gitalk({
+            clientID: '503223b8d61a488c660d',
+            clientSecret: '81e61fa4fd1e6f2f10118b341d02d56ac29bc59e',
+            repo: 'https://LLstar.github.io',
+            owner: 'LLstar',
+            admin: [''],
+            id: location.pathname,      // Ensure uniqueness and length less than 50
+            distractionFreeMode: false  // Facebook-like distraction free mode
+        })
 
-  
+        gitalk.render('gitalk-container')
+    </script>
+</div>
+
+      
 
 
 
