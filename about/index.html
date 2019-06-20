@@ -289,7 +289,7 @@
             $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
           });
           function dashangToggle(){
-            
+
             $(".hide_box").fadeToggle();
             $(".shang_box").fadeToggle();
           }
@@ -322,6 +322,22 @@
 
 
     
+      <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<div id="gitalk-container"></div>
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        id: window.location.pathname,
+        repo: 'https://LLstar.github.io',
+        owner: 'LLstar',
+        admin: ''
+    })
+    gitalk.render('gitalk-container')
+</script>
+
+  
 
 
 
@@ -330,6 +346,7 @@
     <script>
         
     </script>
+
 </div>
       <footer id="footer">
     <div class="outer">
