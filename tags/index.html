@@ -387,19 +387,20 @@
 
 
     
-        <div id="gitments"></div>
-<script src="https://www.wenjunjiang.win/js/gitment.js"></script>
-<script>
-    var gitment = new Gitment({
-      id: window.location.pathname,
-      owner: 'LLstar',
-      repo: 'https://LLstar.github.io',
-      oauth: {
-          client_id: '503223b8d61a488c660d',
-          client_secret: '81e61fa4fd1e6f2f10118b341d02d56ac29bc59e',
-      },
+      <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<div id="gitalk-container"></div>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '503223b8d61a488c660d',
+        clientSecret: '81e61fa4fd1e6f2f10118b341d02d56ac29bc59e',
+        id: window.location.pathname,
+        repo: 'LLstar.github.io',
+        owner: 'LLstar',
+        admin: '',
+        distractionFreeMode: ''
     })
-    gitment.render('gitments')
+    gitalk.render('gitalk-container')
 </script>
 
     
