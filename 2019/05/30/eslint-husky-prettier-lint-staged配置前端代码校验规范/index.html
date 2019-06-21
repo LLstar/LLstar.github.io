@@ -68,10 +68,6 @@
         <p class="header-subtitle">welcome to my blog!</p>
         
         
-            <form>
-                <input type="text" class="st-default-search-input search" id="search" placeholder=" Search...">
-            </form>
-        
         
 
         <div id="switch-area" class="switch-area">
@@ -407,14 +403,14 @@
 
     
       <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://yiyeti.cc/usr/themes/veryse/css/gitalk.min.js"></script>
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 <div id="gitalk-container"></div>
 <script type="text/javascript">
     var gitalk = new Gitalk({
         clientID: '503223b8d61a488c660d',
         clientSecret: '81e61fa4fd1e6f2f10118b341d02d56ac29bc59e',
         id: window.location.pathname,
-        repo: 'https://LLstar.github.io',
+        repo: 'LLstar.github.io',
         owner: 'LLstar',
         admin: '',
         distractionFreeMode: 'true'
@@ -557,23 +553,6 @@
     });
 </script>
 
-
-    <script type="text/javascript">
-      window.onload = function(){
-        document.getElementById("search").onclick = function(){
-            console.log("search")
-            search();
-        }
-      }
-      function search(){
-        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-
-        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
-      }
-    </script>
 
 
   </div>
