@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="LLstar的个人博客">
 <meta property="og:description" content="一、前端环境搭建使用npm或yarn来安装webpack，在webpack3中，webpack本身和它的cli是在同一个包中，但在webpack4中，已经将两者分来来更好地管理它们。 12345$ npm install webpack webpack-cli -g# 或者$ yarn global add webpack webpack-cli$ npm init -y // -y 默认所有的配">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-21T08:15:15.411Z">
+<meta property="og:updated_time" content="2019-06-21T08:18:09.929Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack的使用">
 <meta name="twitter:description" content="一、前端环境搭建使用npm或yarn来安装webpack，在webpack3中，webpack本身和它的cli是在同一个包中，但在webpack4中，已经将两者分来来更好地管理它们。 12345$ npm install webpack webpack-cli -g# 或者$ yarn global add webpack webpack-cli$ npm init -y // -y 默认所有的配">
@@ -216,6 +216,8 @@
         <h4 id="一、前端环境搭建"><a href="#一、前端环境搭建" class="headerlink" title="一、前端环境搭建"></a>一、前端环境搭建</h4><p>使用npm或yarn来安装webpack，在webpack3中，webpack本身和它的cli是在同一个包中，但在webpack4中，已经将两者分来来更好地管理它们。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm install webpack webpack-cli -g</span><br><span class="line"><span class="meta">#</span> 或者</span><br><span class="line"><span class="meta">$</span> yarn global add webpack webpack-cli</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> npm init -y // -y 默认所有的配置</span><br></pre></td></tr></table></figure>
 
+<a id="more"></a>
+
 <h4 id="二、部署webpack"><a href="#二、部署webpack" class="headerlink" title="二、部署webpack"></a>二、部署webpack</h4><p>在上面搭建好的环境项目中，我们来到package.json里配置scripts</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="comment">//我们在这里配置，就可以使用npm run build 启动我们的webpack</span></span><br><span class="line">    <span class="string">"build"</span>: <span class="string">"webpack --mode production"</span> </span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"devDependencies"</span>: &#123;</span><br><span class="line">    <span class="string">"webpack"</span>: <span class="string">"^4.16.0"</span>,</span><br><span class="line">    <span class="string">"webpack-cli"</span>: <span class="string">"^3.0.8"</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
@@ -326,7 +328,7 @@
         <p><span>本文标题:</span><a href="/2019/06/21/webpack的使用/">webpack的使用</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 LLstar 的个人博客">LLstar</a></p>
         <p><span>发布时间:</span>2019年06月21日 - 16时12分</p>
-        <p><span>最后更新:</span>2019年06月21日 - 16时15分</p>
+        <p><span>最后更新:</span>2019年06月21日 - 16时18分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/06/21/webpack的使用/" title="webpack的使用">http://yoursite.com/2019/06/21/webpack的使用/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/06/21/webpack的使用/　　作者: LLstar" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
