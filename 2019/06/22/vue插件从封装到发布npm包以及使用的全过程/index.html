@@ -16,7 +16,7 @@
 <meta property="og:image" content="https://i.loli.net/2019/06/22/5d0de5ffd653d79995.png">
 <meta property="og:image" content="https://i.loli.net/2019/06/22/5d0df56722d6030815.png">
 <meta property="og:image" content="https://i.loli.net/2019/06/22/5d0df5e7883a342589.png">
-<meta property="og:updated_time" content="2019-06-22T09:38:55.944Z">
+<meta property="og:updated_time" content="2019-06-22T09:40:56.933Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue插件从封装到发布npm包以及使用的全过程">
 <meta name="twitter:description" content="封装vue插件在开发过程中我们经常会遇到一个组件到处都可以重复使用，如果每次都把代码复制过去就太复杂了，封装为一个插件是最好的选择，哪里需要哪里就引入即可。 利用vue init webpack-simple 文件名创建我们的项目目录，在写文件名之前最好先去npm官网查一下有没有相同的名称，因为创建的文件名就是之后我们要发包的文件名（虽然发包时文件名称也可以修改，但还是直接创建一个不重名的项目比较">
@@ -219,6 +219,8 @@
           
         <h4 id="封装vue插件"><a href="#封装vue插件" class="headerlink" title="封装vue插件"></a>封装vue插件</h4><p>在开发过程中我们经常会遇到一个组件到处都可以重复使用，如果每次都把代码复制过去就太复杂了，封装为一个插件是最好的选择，哪里需要哪里就引入即可。</p>
 <p>利用<code>vue init webpack-simple 文件名</code>创建我们的项目目录，在写文件名之前最好先去npm官网查一下有没有相同的名称，因为创建的文件名就是之后我们要发包的文件名（虽然发包时文件名称也可以修改，但还是直接创建一个不重名的项目比较好）。</p>
+<a id="more"></a>
+
 <p>创建好项目之后，项目目录如下所示（这是我修改过的文件目录，创建好的文件目录是一个vue项目）：</p>
 <p><img src="https://i.loli.net/2019/06/22/5d0de5ffd653d79995.png" alt></p>
 <p>在src下新建一个packages文件夹，来存放我们将要创建的子组件。我创建了一个Test的文件夹，来存放我创建的test组件。我再test目录下放了一个src的文件夹和index.js文件（参考element组件的封装，估计是为了结构更清晰吧。）</p>
@@ -330,7 +332,7 @@
         <p><span>本文标题:</span><a href="/2019/06/22/vue插件从封装到发布npm包以及使用的全过程/">vue插件从封装到发布npm包以及使用的全过程</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 LLstar 的个人博客">LLstar</a></p>
         <p><span>发布时间:</span>2019年06月22日 - 17时38分</p>
-        <p><span>最后更新:</span>2019年06月22日 - 17时38分</p>
+        <p><span>最后更新:</span>2019年06月22日 - 17时40分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/06/22/vue插件从封装到发布npm包以及使用的全过程/" title="vue插件从封装到发布npm包以及使用的全过程">http://yoursite.com/2019/06/22/vue插件从封装到发布npm包以及使用的全过程/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/06/22/vue插件从封装到发布npm包以及使用的全过程/　　作者: LLstar" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

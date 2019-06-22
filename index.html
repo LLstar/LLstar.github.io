@@ -205,62 +205,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h4 id="封装vue插件"><a href="#封装vue插件" class="headerlink" title="封装vue插件"></a>封装vue插件</h4><p>在开发过程中我们经常会遇到一个组件到处都可以重复使用，如果每次都把代码复制过去就太复杂了，封装为一个插件是最好的选择，哪里需要哪里就引入即可。</p>
+              <h4 id="封装vue插件"><a href="#封装vue插件" class="headerlink" title="封装vue插件"></a>封装vue插件</h4><p>在开发过程中我们经常会遇到一个组件到处都可以重复使用，如果每次都把代码复制过去就太复杂了，封装为一个插件是最好的选择，哪里需要哪里就引入即可。</p>
 <p>利用<code>vue init webpack-simple 文件名</code>创建我们的项目目录，在写文件名之前最好先去npm官网查一下有没有相同的名称，因为创建的文件名就是之后我们要发包的文件名（虽然发包时文件名称也可以修改，但还是直接创建一个不重名的项目比较好）。</p>
-<p>创建好项目之后，项目目录如下所示（这是我修改过的文件目录，创建好的文件目录是一个vue项目）：</p>
-<p><img src="https://i.loli.net/2019/06/22/5d0de5ffd653d79995.png" alt></p>
-<p>在src下新建一个packages文件夹，来存放我们将要创建的子组件。我创建了一个Test的文件夹，来存放我创建的test组件。我再test目录下放了一个src的文件夹和index.js文件（参考element组件的封装，估计是为了结构更清晰吧。）</p>
-<p>src目录下的index.vue文件：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    这是一个npm包测试的demo</span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">export default &#123;</span><br><span class="line">  name: 'Test',  // 这个组件的名称必须要写，在之后我们会用到</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  props: &#123;&#125;,</span><br><span class="line">  methods: &#123;&#125;,</span><br><span class="line">  created() &#123;&#125;,</span><br><span class="line">  components: &#123;&#125;,</span><br><span class="line">  watch: &#123;&#125;,</span><br><span class="line">  computed: &#123;&#125;,</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span> <span class="attr">lang</span>=<span class="string">'scss'</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>Test目录下的index.js文件：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Test是对应组件的名字，要记得在index.vue文件中的name属性</span></span><br><span class="line"><span class="keyword">import</span> Test <span class="keyword">from</span> <span class="string">'./src/index.vue'</span></span><br><span class="line"></span><br><span class="line">Test.install = <span class="function"><span class="params">Vue</span> =&gt;</span> &#123;</span><br><span class="line">  Vue.component(Test.name, Test)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Test</span><br></pre></td></tr></table></figure>
-
-<p>install是vue中挂载组件的方法，有了它我们就可以在外部use一个插件。</p>
-<p>在src目录下有一个index.js文件，这就是我们再webpack中配置的入口文件，后面会说到，先看一下该文件的配置：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Test <span class="keyword">from</span> <span class="string">'./packages/Test'</span></span><br><span class="line"><span class="comment">// 如果还有其他组件的话可以继续添加</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> components = [Test] <span class="comment">// 还有的话可以继续添加，是一个数组</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> install = <span class="function"><span class="params">vue</span> =&gt;</span> &#123;</span><br><span class="line">  components.map(<span class="function"><span class="params">component</span> =&gt;</span> &#123;</span><br><span class="line">    vue.component(component.name, component)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 每个组件都有一个install方法，同上面的install方法相同，这个防范的第一个参数是Vue构造器,第二个参数是一个可选的选项对象。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="built_in">window</span> !== <span class="string">'undefined'</span> &amp;&amp; <span class="built_in">window</span>.Vue) &#123;</span><br><span class="line">  install(<span class="built_in">window</span>.Vue)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  Test</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>package.json文件的配置：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"name"</span>: <span class="string">"module-test-demo"</span>,</span><br><span class="line">  <span class="string">"description"</span>: <span class="string">"npm测试包"</span>,</span><br><span class="line">  <span class="string">"version"</span>: <span class="string">"1.0.8"</span>,</span><br><span class="line">  <span class="string">"author"</span>: <span class="string">"XXX"</span>,</span><br><span class="line">  <span class="string">"license"</span>: <span class="string">"MIT"</span>,</span><br><span class="line">  <span class="string">"private"</span>: <span class="literal">false</span>, <span class="comment">//如果你发布的共有包，这个参数必须为false</span></span><br><span class="line">  <span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"dev"</span>: <span class="string">"cross-env NODE_ENV=development webpack-dev-server --open --hot"</span>,</span><br><span class="line">    <span class="string">"build"</span>: <span class="string">"cross-env NODE_ENV=production webpack --progress --hide-modules"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"main"</span>: <span class="string">"dist/module-test-demo.min.js"</span> <span class="comment">// 发包之后的主文件，跟webpack中的配置相同</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>webpack.config.js文件配置：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">entry: <span class="string">'./src/index.js'</span>, <span class="comment">// 项目的主入口文件</span></span><br><span class="line">output: &#123;</span><br><span class="line">   path: path.resolve(__dirname, <span class="string">'./dist'</span>),</span><br><span class="line">   publicPath: <span class="string">'/dist/'</span>,</span><br><span class="line">   filename: <span class="string">'module-test-demo.min.js'</span>, <span class="comment">// 打包完之后文件的名称</span></span><br><span class="line">   library: <span class="string">'ModuleTestDemo'</span>, <span class="comment">// 将library暴露为一个名为"ModuleTestDemo"的变量</span></span><br><span class="line">   libraryTarget: <span class="string">'umd'</span>, <span class="comment">// 这是一种可以将你的library能够在所有的模块定义下都可运行的方式</span></span><br><span class="line">   umdNamedDefine: <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>当你在import引入模块时，这可以讲你的library bundle暴露为名为ModuleTestDemo的全局变量，为了让library和其他环境兼容，还需要在配置文件中添加<code>libraryTarget</code>属性，这是可以控制library如何以不同方式暴露的选项。</p>
-<p>libraryTarget选项（默认值为：var）：</p>
-<ul>
-<li>变量：作为一个全局变量，通过<code>script</code>标签来访问 { <code>libraryTarget: &#39;var&#39;</code> }</li>
-<li>this：通过<code>this</code>对象来访问 { <code>libraryTarget: &#39;this&#39;</code> }</li>
-<li>window：通过<code>window</code>对象访问，在浏览器中 { <code>libraryTarget: &#39;window&#39;</code> }</li>
-<li>umd：在AMD或CommonJS的<code>require</code>之后可访问 { <code>libraryTarget: &#39;umd&#39;</code> }</li>
-</ul>
-<h4 id="发布npm包"><a href="#发布npm包" class="headerlink" title="发布npm包"></a>发布npm包</h4><ul>
-<li>初始化刚刚的项目</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm init // 发包之前必须要执行这一步，我就是没执行这一步，导致发布的包在引入之后不能用，如果不执行这一步，发包之后在包目录下并没有生成dist文件夹，因此发包之后你的东西并没有引入进入，导致你引入的包找不到</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>登录npm</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm login // 输入用户名和密码，以及当时注册的邮箱，邮箱必须要认证，不然发包时会报错</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>登录成功后就可以发包了，发包之前必须使用npm官方镜像，不然发包会报错</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ nrm use npm // 使用官方的镜像</span><br><span class="line">$ npm version patch // 修改版本</span><br><span class="line">$ npm publish // 发布</span><br></pre></td></tr></table></figure>
-
-<p>npm version参数说明：</p>
-<ul>
-<li>patch：小变动，比如修复bug等，版本号变动  v1.0.0 -&gt; v1.0.1</li>
-<li>minor：增加新功能，不影响现有版本的功能，版本号变动  v1.0.0 -&gt; v1.1.0</li>
-<li>major：破坏模块对其向后的兼容性，一般这个版本号的变动意味着不向下兼容，版本号变动  v1.0.0 -&gt; v2.0.0</li>
-</ul>
-<p>发布时，可能会遇到下面这个问题，这就是你的npm包的名称与现有的包名称冲突，你需要更改package.json中的name，重新发布。</p>
-<p><img src="https://i.loli.net/2019/06/22/5d0df56722d6030815.png" alt></p>
-<p>运行之后看到如下图，说明已经发包成功，在npm官网搜索就可以看到了。</p>
-<p><img src="https://i.loli.net/2019/06/22/5d0df5e7883a342589.png" alt></p>
-<p>这就是我从封装插件到npm发包的过程，中间因为没有执行<code>npm init</code>命令，导致我发包只有引入一直报错，我找了很久才发现，所以在发包之前一定要执行该命令，不然会被坑，记一次我踩坑的经历。</p>
-
+          
       
       
     </div>
@@ -274,6 +221,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue-npm/">vue npm</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a href="/2019/06/22/vue插件从封装到发布npm包以及使用的全过程/#more">小星星 >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
