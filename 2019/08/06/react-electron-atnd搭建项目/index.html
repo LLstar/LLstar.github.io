@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>react+electron+atnd搭建项目 | LLstar的个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="按需引入antd组件1、引入 1234567yarn add antd react-app-rewired babel-plugin-import // antd 样式组件// react-app-rewired 自定义配置react项目的工具// babel-plugin-import 一个按需加载代码、样式的babel插件yarn customize-cra less-loader less/">
+<meta name="keywords" content="react electron">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react+electron+atnd搭建项目">
+<meta property="og:url" content="http://yoursite.com/2019/08/06/react-electron-atnd搭建项目/index.html">
+<meta property="og:site_name" content="LLstar的个人博客">
+<meta property="og:description" content="按需引入antd组件1、引入 1234567yarn add antd react-app-rewired babel-plugin-import // antd 样式组件// react-app-rewired 自定义配置react项目的工具// babel-plugin-import 一个按需加载代码、样式的babel插件yarn customize-cra less-loader less/">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-06T08:21:53.586Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="react+electron+atnd搭建项目">
+<meta name="twitter:description" content="按需引入antd组件1、引入 1234567yarn add antd react-app-rewired babel-plugin-import // antd 样式组件// react-app-rewired 自定义配置react项目的工具// babel-plugin-import 一个按需加载代码、样式的babel插件yarn customize-cra less-loader less/">
+  
+    <link rel="alternative" href="/atom.xml" title="LLstar的个人博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet">
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: false,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+</html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img src="/img/head.jpg" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">LLstar</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">welcome to my blog!</p>
+        
+        
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">Home</a></li>
+                        
+                            <li><a href="/about/">About</a></li>
+                        
+                            <li><a href="/archives/">Archives</a></li>
+                        
+                            <li><a href="/tags/">Tags</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/LLstar" title="github">github</a>
+                            
+                                <a class="fl weibo" target="_blank" href="#" title="weibo">weibo</a>
+                            
+                                <a class="fl QQ" target="_blank" href="#" title="QQ">QQ</a>
+                            
+                                <a class="fl wechat" target="_blank" href="#" title="wechat">wechat</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://LLstar.github.io/">name</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">LLstar</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img src="/img/head.jpg" class="js-avatar" style="width: 100%; height: 100%; opacity: 1;">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">LLstar</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">welcome to my blog!</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">Home</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/tags/">Tags</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/LLstar" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+                    
+                        <a class="QQ" target="_blank" href="#" title="QQ">QQ</a>
+                    
+                        <a class="wechat" target="_blank" href="#" title="wechat">wechat</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-react-electron-atnd搭建项目" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/08/06/react-electron-atnd搭建项目/" class="article-date">
+      <time datetime="2019-08-06T08:19:05.000Z" itemprop="datePublished">2019-08-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      react+electron+atnd搭建项目
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react-electron/">react electron</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h4 id="按需引入antd组件"><a href="#按需引入antd组件" class="headerlink" title="按需引入antd组件"></a>按需引入antd组件</h4><p>1、引入</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">yarn add antd react-app-rewired babel-plugin-<span class="keyword">import</span> </span><br><span class="line"><span class="comment">// antd 样式组件</span></span><br><span class="line"><span class="comment">// react-app-rewired 自定义配置react项目的工具</span></span><br><span class="line"><span class="comment">// babel-plugin-import 一个按需加载代码、样式的babel插件</span></span><br><span class="line"></span><br><span class="line">yarn customize-cra less-loader less</span><br><span class="line"><span class="comment">// 由于新的react-app-rewired@2.x版本的关系，需要安装customize-cra来配置override文件</span></span><br></pre></td></tr></table></figure>
+
+<p>2、修改根目录下的package.json文件：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># /package.json</span><br><span class="line"></span><br><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">-    <span class="string">"start"</span>: <span class="string">"react-scripts start"</span>,</span><br><span class="line">-    <span class="string">"build"</span>: <span class="string">"react-scripts build"</span>,</span><br><span class="line">-    <span class="string">"test"</span>: <span class="string">"react-scripts test --env=jsdom"</span>,</span><br><span class="line">-	 <span class="string">"eject"</span>: <span class="string">"react-scripts eject"</span>,</span><br><span class="line">+    <span class="string">"start"</span>: <span class="string">"react-app-rewired start"</span>,</span><br><span class="line">+    <span class="string">"build"</span>: <span class="string">"react-app-rewired build"</span>,</span><br><span class="line">+    <span class="string">"test"</span>: <span class="string">"react-app-rewired test --env=jsdom"</span>,</span><br><span class="line">+	 <span class="string">"eject"</span>: <span class="string">"react-app-rewired eject"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<p>3、在根目录下创建一个config-overrides.js文件，用于书写自定义配置：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># /config-overrides.js</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123; override, fixBabelImports, addLessLoader&#125; = <span class="built_in">require</span>(<span class="string">"customize-cra"</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = override(</span><br><span class="line">  fixBabelImports(<span class="string">"import"</span>, &#123;</span><br><span class="line">    libraryName: <span class="string">"antd"</span>, <span class="attr">libraryDirectory</span>: <span class="string">"es"</span>, <span class="attr">style</span>: <span class="literal">true</span></span><br><span class="line">  &#125;),</span><br><span class="line">  addLessLoader(&#123;</span><br><span class="line">    javascriptEnabled: <span class="literal">true</span>,</span><br><span class="line">    modifyVars: &#123; <span class="string">"@primary-color"</span>: <span class="string">"#1DA57A"</span> &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h4 id="将启动react的命令和启动electron的命令合并为一个命令"><a href="#将启动react的命令和启动electron的命令合并为一个命令" class="headerlink" title="将启动react的命令和启动electron的命令合并为一个命令"></a>将启动react的命令和启动electron的命令合并为一个命令</h4><p>1、引入</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yarn add concurrently cross-env wait-on --dev</span><br><span class="line"><span class="comment">// concurrently同时运行多个命令</span></span><br><span class="line"><span class="comment">// 运行react-app-rewired start时，不打开浏览器，需要传入BROWSER=none,所以需要安装cross-env做传值兼容</span></span><br><span class="line"><span class="comment">// 同时运行时，electron打开时，服务器还没运行好，所以需要使用wait-on</span></span><br></pre></td></tr></table></figure>
+
+<p>2、在package.json中添加命令</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"electron-start"</span>: <span class="string">"cross-env NODE_ENV=development electron ."</span>,</span><br><span class="line">    <span class="string">"electron-dev"</span>: <span class="string">"concurrently \"cross-env BROWSER=none yarn start\" \"wait-on 				http://localhost:3000 &amp;&amp; electron . \""</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3、运行命令 yarn electron-dev就可以看到项目启动起来了。</p>
+<h4 id="利用electron-builder打包项目"><a href="#利用electron-builder打包项目" class="headerlink" title="利用electron-builder打包项目"></a>利用electron-builder打包项目</h4><p>1、引入electron-builder，electron-builder只能在开发环境中使用，所以必须下载在devdependencies下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add electron-builder -D</span><br></pre></td></tr></table></figure>
+
+<p>2、配置package.json文件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"version"</span>: <span class="string">"0.1.0"</span>, <span class="comment">// 版本号</span></span><br><span class="line">  <span class="string">"author"</span>: <span class="string">"XXX"</span>, <span class="comment">// 作者</span></span><br><span class="line">  <span class="string">"description"</span>: <span class="string">"XXX"</span>, <span class="comment">// 描述</span></span><br><span class="line">  <span class="string">"main"</span>: <span class="string">"./public/electron.js"</span>, <span class="comment">// 主入口文件必须放入到public文件下(在react项目中，打包时会有报错提示，可以根据提示将electron.js文件放入该放入的文件夹中)</span></span><br><span class="line">  <span class="string">"build"</span>: &#123; <span class="comment">// electron-builder配置</span></span><br><span class="line">    <span class="string">"productName"</span>: <span class="string">"XXX"</span>, <span class="comment">// 项目名称，即打包后的*.exe文件名</span></span><br><span class="line">    <span class="string">"copyright"</span>: <span class="string">"XXX"</span>, <span class="comment">// 版权</span></span><br><span class="line">    <span class="string">"appId"</span>: <span class="string">"XXX"</span>, <span class="comment">// 应用id</span></span><br><span class="line">    <span class="string">"compression"</span>: <span class="string">"maximum"</span>, <span class="comment">// 打包压缩情况 &lt;store|normal|maximum&gt; store相对较快</span></span><br><span class="line">    <span class="string">"asar"</span>: <span class="literal">false</span>, <span class="comment">// asar打包</span></span><br><span class="line">    <span class="string">"directories"</span>: &#123;</span><br><span class="line">      <span class="string">"output"</span>: <span class="string">"build"</span> <span class="comment">// 输出文件夹</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"files"</span>: [</span><br><span class="line">      <span class="string">"dist/**/*"</span>,</span><br><span class="line">      <span class="string">"package.json"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="string">"win"</span>: &#123;</span><br><span class="line">      <span class="string">"target"</span>: <span class="string">"nsis"</span>, <span class="comment">// 打包为nsis安装文件</span></span><br><span class="line">      <span class="string">"icon"</span>: <span class="string">"./public/favicon.ico"</span> <span class="comment">// 应用的图标，改图标必须使用256*256像素的才可以</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"nsis"</span>: &#123; <span class="comment">// nsis配置</span></span><br><span class="line">      <span class="string">"allowToChangeInstallationDirectory"</span>: <span class="literal">true</span>, <span class="comment">// 允许用户选择安装位置</span></span><br><span class="line">      <span class="string">"oneClick"</span>: <span class="literal">false</span>, <span class="comment">// 是否一键安装</span></span><br><span class="line">      <span class="string">"allowElevation"</span>: <span class="literal">false</span> <span class="comment">// 允许请求提升。如果为false，则用户必须使用提升的权限重新启动安装程序</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"build"</span>: <span class="string">"react-app-rewired build"</span>,</span><br><span class="line">    <span class="string">"pack"</span>: <span class="string">"electron-builder --dir"</span>, <span class="comment">// 打包为目录文件</span></span><br><span class="line">    <span class="string">"dist"</span>: <span class="string">"electron-builder --win --ia32 --publish always"</span> <span class="comment">// 打包为.exe文件</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3、运行打包命令</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yarn build <span class="comment">// 打包react项目</span></span><br><span class="line">yarn dist <span class="comment">// 打包electron</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="react-router的使用"><a href="#react-router的使用" class="headerlink" title="react-router的使用"></a>react-router的使用</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; render &#125; <span class="keyword">from</span> <span class="string">'react-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; HashRouter <span class="keyword">as</span> Router, Route, Link, Redirect, Switch &#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span>;</span><br><span class="line"><span class="keyword">import</span> Home <span class="keyword">from</span> <span class="string">'./Home'</span>;</span><br><span class="line"><span class="keyword">import</span> Profile <span class="keyword">from</span> <span class="string">'./Profile'</span>;</span><br><span class="line"><span class="keyword">import</span> User <span class="keyword">from</span> <span class="string">'./User'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;Router&gt;</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">          &lt;div&gt;</span><br><span class="line">            &lt;Link to=<span class="string">"/home"</span>&gt;首页&lt;<span class="regexp">/Link&gt;</span></span><br><span class="line"><span class="regexp">            &lt;Link to="/</span>profile<span class="string">"&gt;个人中心&lt;/Link&gt;</span></span><br><span class="line"><span class="string">            &lt;Link to="</span>/user<span class="string">"&gt;用户&lt;/Link&gt;</span></span><br><span class="line"><span class="string">          &lt;/div&gt;</span></span><br><span class="line"><span class="string">          &lt;div&gt;</span></span><br><span class="line"><span class="string">            &lt;Switch&gt;</span></span><br><span class="line"><span class="string">              &lt;Route path="</span>/home<span class="string">" exact component=&#123;Home&#125;&gt;</span></span><br><span class="line"><span class="string">                  &lt;Route path="</span>/profile<span class="string">" component=&#123;Profile&#125;&gt;&lt;/Route&gt;</span></span><br><span class="line"><span class="string">                  &lt;Route path="</span>/user<span class="string">" component=&#123;User&#125;&gt;&lt;/Route&gt;</span></span><br><span class="line"><span class="string">              &lt;/Route&gt;</span></span><br><span class="line"><span class="string">            &lt;/Switch&gt;</span></span><br><span class="line"><span class="string">          &lt;/div&gt;</span></span><br><span class="line"><span class="string">        &lt;/div&gt;</span></span><br><span class="line"><span class="string">      &lt;/Router&gt;</span></span><br><span class="line"><span class="string">    )</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">render(&lt;App&gt;&lt;/App&gt;, document.querySelector('#root'));</span></span><br></pre></td></tr></table></figure>
+
+<p>react-router4之前的写法， 路由嵌套时只要这样写就可以，但是如果是react-router4之后写法就跟这种写法不一样啦，需要在其父页面中引入路由，在其父页面中添加使用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> &#123; Route &#125; <span class="keyword">from</span> <span class="string">'react-router-dom'</span></span><br><span class="line"><span class="keyword">import</span> Profile <span class="keyword">from</span> <span class="string">'./Profile'</span>;</span><br><span class="line"><span class="keyword">import</span> User <span class="keyword">from</span> <span class="string">'./User'</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Home</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      &lt;div className=<span class="string">"home"</span>&gt;</span><br><span class="line">        &lt;Route path=<span class="string">'/profile'</span> component = &#123; Profile &#125; /&gt;</span><br><span class="line">        &lt;Route path=<span class="string">'/user'</span> component = &#123; User &#125; /&gt;</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="react中使用mobx装饰器报错"><a href="#react中使用mobx装饰器报错" class="headerlink" title="react中使用mobx装饰器报错"></a>react中使用mobx装饰器报错</h4><p>在react项目中使用mobx，例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyState</span> </span>&#123;</span><br><span class="line">  @observable num = <span class="number">0</span>;</span><br><span class="line">  @action addNum = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.num++;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>启动后会收到这样的错误：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">SyntaxError</span>: D:\lianxi\redux-mobx-test\src\App.js: Support <span class="keyword">for</span> the experimental syntax <span class="string">'decorators-legacy'</span> isn<span class="string">'t currently enabled (7:3):</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">   5 |</span></span><br><span class="line"><span class="string">   6 | class MyState &#123;</span></span><br><span class="line"><span class="string">&gt;  7 |   @observable num = 0;</span></span><br><span class="line"><span class="string">     |   ^</span></span><br><span class="line"><span class="string">   8 |   @action addNum = () =&gt; &#123;</span></span><br><span class="line"><span class="string">   9 |     this.num++;</span></span><br><span class="line"><span class="string">  10 |   &#125;;</span></span><br></pre></td></tr></table></figure>
+
+<p>需要在package.json中配置babel</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yarn add @babel/plugin-proposal-decorators -D</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"babel"</span>: &#123;</span><br><span class="line">    <span class="string">"presets"</span>: [</span><br><span class="line">      <span class="string">"react-app"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="string">"plugins"</span>: [</span><br><span class="line">      [</span><br><span class="line">        <span class="string">"@babel/plugin-proposal-decorators"</span>,</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="string">"legacy"</span>: <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+
+<p>之后需要执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yarn eject</span><br></pre></td></tr></table></figure>
+
+<p>执行完之后可能会报错，找不到某些模块，按需添加这些模块就可以，执行完命令之后，babel的这个配置会被覆盖，重新再讲上述代码替换到，重新运行就可以了。</p>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2019/08/06/react-electron-atnd搭建项目/">react+electron+atnd搭建项目</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 LLstar 的个人博客">LLstar</a></p>
+        <p><span>发布时间:</span>2019年08月06日 - 16时19分</p>
+        <p><span>最后更新:</span>2019年08月06日 - 16时21分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2019/08/06/react-electron-atnd搭建项目/" title="react+electron+atnd搭建项目">http://yoursite.com/2019/08/06/react-electron-atnd搭建项目/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/08/06/react-electron-atnd搭建项目/　　作者: LLstar" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2019/08/24/vue的mixins和slot/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          vue的mixins和slot
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/06/22/vue插件从封装到发布npm包以及使用的全过程/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue插件从封装到发布npm包以及使用的全过程</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#按需引入antd组件"><span class="toc-number">1.</span> <span class="toc-text">按需引入antd组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#将启动react的命令和启动electron的命令合并为一个命令"><span class="toc-number">2.</span> <span class="toc-text">将启动react的命令和启动electron的命令合并为一个命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#利用electron-builder打包项目"><span class="toc-number">3.</span> <span class="toc-text">利用electron-builder打包项目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#react-router的使用"><span class="toc-number">4.</span> <span class="toc-text">react-router的使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#react中使用mobx装饰器报错"><span class="toc-number">5.</span> <span class="toc-text">react中使用mobx装饰器报错</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2019/08/24/vue的mixins和slot/" title="上一篇: vue的mixins和slot">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2019/06/22/vue插件从封装到发布npm包以及使用的全过程/" title="下一篇: vue插件从封装到发布npm包以及使用的全过程">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/08/24/vue的mixins和slot/">vue的mixins和slot</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/06/react-electron-atnd搭建项目/">react+electron+atnd搭建项目</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/22/vue插件从封装到发布npm包以及使用的全过程/">vue插件从封装到发布npm包以及使用的全过程</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/21/webpack的使用/">webpack的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/21/electron-vue利用webpack打包实现多页面的入口文件/">electron-vue利用webpack打包实现多页面的入口文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/">eslint+husky+prettier+lint-staged配置前端代码校验规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/30/利用hexo搭建自己的博客/">利用hexo搭建自己的博客</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019 LLstar
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >星星到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+
+  </div>
+</body>
+</html>

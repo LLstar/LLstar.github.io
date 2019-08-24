@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <title>LLstar的个人博客</title>
@@ -178,6 +178,139 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-vue的mixins和slot" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/08/24/vue的mixins和slot/" class="article-date">
+      <time datetime="2019-08-24T02:09:19.000Z" itemprop="datePublished">2019-08-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/24/vue的mixins和slot/">vue的mixins和slot</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="vue的混入mixins"><a href="#vue的混入mixins" class="headerlink" title="vue的混入mixins"></a>vue的混入mixins</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>官方定义：混入（mixins）提供了一种非常灵活的方式，来分发Vue组件中可复用功能。一个混入对象可以包含任意组件选项。当组件使用混入对象时，所有混入对象的选项将被“混合”进入该组件本身的选项。</p>
+<p>但是根据我自己的理解，我觉得mixins就是将vue的组件中的js部分提取出来，把各个组件中共用的数据（包括：data，methods，各种生命周期钩子函数等，只要你能在组件中操作的js都可以放在mixins中）统一放在一个文件中集中处理。</p>
+          
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2019/08/24/vue的mixins和slot/#more">小星星 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-react-electron-atnd搭建项目" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/08/06/react-electron-atnd搭建项目/" class="article-date">
+      <time datetime="2019-08-06T08:19:05.000Z" itemprop="datePublished">2019-08-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/06/react-electron-atnd搭建项目/">react+electron+atnd搭建项目</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h4 id="按需引入antd组件"><a href="#按需引入antd组件" class="headerlink" title="按需引入antd组件"></a>按需引入antd组件</h4><p>1、引入</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">yarn add antd react-app-rewired babel-plugin-<span class="keyword">import</span> </span><br><span class="line"><span class="comment">// antd 样式组件</span></span><br><span class="line"><span class="comment">// react-app-rewired 自定义配置react项目的工具</span></span><br><span class="line"><span class="comment">// babel-plugin-import 一个按需加载代码、样式的babel插件</span></span><br><span class="line"></span><br><span class="line">yarn customize-cra less-loader less</span><br><span class="line"><span class="comment">// 由于新的react-app-rewired@2.x版本的关系，需要安装customize-cra来配置override文件</span></span><br></pre></td></tr></table></figure>
+
+<p>2、修改根目录下的package.json文件：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># /package.json</span><br><span class="line"></span><br><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">-    <span class="string">"start"</span>: <span class="string">"react-scripts start"</span>,</span><br><span class="line">-    <span class="string">"build"</span>: <span class="string">"react-scripts build"</span>,</span><br><span class="line">-    <span class="string">"test"</span>: <span class="string">"react-scripts test --env=jsdom"</span>,</span><br><span class="line">-	 <span class="string">"eject"</span>: <span class="string">"react-scripts eject"</span>,</span><br><span class="line">+    <span class="string">"start"</span>: <span class="string">"react-app-rewired start"</span>,</span><br><span class="line">+    <span class="string">"build"</span>: <span class="string">"react-app-rewired build"</span>,</span><br><span class="line">+    <span class="string">"test"</span>: <span class="string">"react-app-rewired test --env=jsdom"</span>,</span><br><span class="line">+	 <span class="string">"eject"</span>: <span class="string">"react-app-rewired eject"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react-electron/">react electron</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2019/08/06/react-electron-atnd搭建项目/#more">小星星 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-vue插件从封装到发布npm包以及使用的全过程" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -188,7 +321,7 @@
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -223,7 +356,7 @@
 
       
         <p class="article-more-link">
-          <a href="/2019/06/22/vue插件从封装到发布npm包以及使用的全过程/#more">小星星 >></a>
+          <a  href="/2019/06/22/vue插件从封装到发布npm包以及使用的全过程/#more">小星星 >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -253,7 +386,7 @@
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -288,7 +421,7 @@
 
       
         <p class="article-more-link">
-          <a href="/2019/06/21/webpack的使用/#more">小星星 >></a>
+          <a  href="/2019/06/21/webpack的使用/#more">小星星 >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -318,7 +451,7 @@
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -360,7 +493,7 @@
 
       
         <p class="article-more-link">
-          <a href="/2019/06/21/electron-vue利用webpack打包实现多页面的入口文件/#more">小星星 >></a>
+          <a  href="/2019/06/21/electron-vue利用webpack打包实现多页面的入口文件/#more">小星星 >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -390,7 +523,7 @@
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -425,7 +558,7 @@
       
       
         <p class="article-more-link">
-          <a href="/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/#more">小星星 >></a>
+          <a  href="/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/#more">小星星 >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -455,7 +588,7 @@
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -491,7 +624,7 @@
       
       
         <p class="article-more-link">
-          <a href="/2019/05/30/利用hexo搭建自己的博客/#more">小星星 >></a>
+          <a  href="/2019/05/30/利用hexo搭建自己的博客/#more">小星星 >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -526,8 +659,8 @@
         
             <div class="visit">
                 
-                    <span id="busuanzi_container_site_pv" style="display:none">
-                        <span id="site-visit">星星到访数: 
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >星星到访数: 
                             <span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
@@ -536,7 +669,7 @@
                     <span>, </span>
                 
                 
-                    <span id="busuanzi_container_page_pv" style="display:none">
+                    <span id="busuanzi_container_page_pv" style='display:none'>
                         <span id="page-visit">本页阅读量: 
                             <span id="busuanzi_value_page_pv"></span>
                         </span>
