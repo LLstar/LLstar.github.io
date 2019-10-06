@@ -275,7 +275,7 @@
 <h4 id="七、踩坑经历"><a href="#七、踩坑经历" class="headerlink" title="七、踩坑经历"></a>七、踩坑经历</h4><h5 id="1、不蒜子网站统计报错"><a href="#1、不蒜子网站统计报错" class="headerlink" title="1、不蒜子网站统计报错"></a>1、不蒜子网站统计报错</h5><p>采用spfk这个主题，发现他利用不蒜子网站统计不显示，看到不蒜子的官方网站发出了这样的消息：</p>
 <p><img src="https://i.loli.net/2019/06/20/5d0b51950f72e26880.png" alt></p>
 <p>进入hexo博客项目的<code>themes</code>目录下，在<code>spfk/layout/share/after-footer.ejs</code>文件，将</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script <span class="keyword">async</span> src=<span class="string">"https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script <span class="keyword">async</span> src=<span class="string">"https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 
 <p>更改为：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script <span class="keyword">async</span> src=<span class="string">"//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
