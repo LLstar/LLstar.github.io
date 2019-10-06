@@ -1,3 +1,9 @@
+---
+title: eslint+husky+prettier+lint-staged配置前端代码校验规范
+categories: 前端配置
+---
+当团队中多人协作时，因为同事之间不同的代码风格和编辑器，会导致项目的代码无法统一风格，不利于阅读，也更容易造成bug，为统一项目中代码的风格，减少书写上的bug，所以整理了一下利用 eslint+husky+prettier+lint-staged来配置前端代码规范。
+
 ### 配置文件
 
 #### npm包安装
@@ -6,6 +12,8 @@
 $ npm i -D eslint prettier eslint-plugin-prettier eslint-config-prettier husky lint-staged
 $ yarn add eslint prettier eslint-plugin-prettier eslint-config-prettier husky lint-staged -D
 ```
+
+<!--more-->
 
 ##### 1、在前端应用中的package.json中新增如下文件：
 
