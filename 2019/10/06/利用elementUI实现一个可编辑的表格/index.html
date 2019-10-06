@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>利用elementUI实现一个可编辑的表格 | LLstar的个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在使用ElementUI过程中，表格的使用占了很大一部分，但是ElementUI的表格只能实现单纯的展示功能，并不能在展示表格的同时实现表格中单元格的可编辑功能，但是在业务中又需要用到可编辑的表格，于是将ElementUI中的表格和表单结合起来，实现了一个带有表单验证的可编辑表格，刚好可以满足业务需要，同时又方便了表格的使用。">
+<meta name="keywords" content="vue element-ui">
+<meta property="og:type" content="article">
+<meta property="og:title" content="利用elementUI实现一个可编辑的表格">
+<meta property="og:url" content="http://yoursite.com/2019/10/06/利用elementUI实现一个可编辑的表格/index.html">
+<meta property="og:site_name" content="LLstar的个人博客">
+<meta property="og:description" content="在使用ElementUI过程中，表格的使用占了很大一部分，但是ElementUI的表格只能实现单纯的展示功能，并不能在展示表格的同时实现表格中单元格的可编辑功能，但是在业务中又需要用到可编辑的表格，于是将ElementUI中的表格和表单结合起来，实现了一个带有表单验证的可编辑表格，刚好可以满足业务需要，同时又方便了表格的使用。">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-10-06T07:20:45.068Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="利用elementUI实现一个可编辑的表格">
+<meta name="twitter:description" content="在使用ElementUI过程中，表格的使用占了很大一部分，但是ElementUI的表格只能实现单纯的展示功能，并不能在展示表格的同时实现表格中单元格的可编辑功能，但是在业务中又需要用到可编辑的表格，于是将ElementUI中的表格和表单结合起来，实现了一个带有表单验证的可编辑表格，刚好可以满足业务需要，同时又方便了表格的使用。">
+  
+    <link rel="alternative" href="/atom.xml" title="LLstar的个人博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet">
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: false,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+</html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img src="/img/head.jpg" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">LLstar</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">welcome to my blog!</p>
+        
+        
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">Home</a></li>
+                        
+                            <li><a href="/about/">About</a></li>
+                        
+                            <li><a href="/archives/">Archives</a></li>
+                        
+                            <li><a href="/tags/">Tags</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/LLstar" title="github">github</a>
+                            
+                                <a class="fl weibo" target="_blank" href="#" title="weibo">weibo</a>
+                            
+                                <a class="fl QQ" target="_blank" href="#" title="QQ">QQ</a>
+                            
+                                <a class="fl wechat" target="_blank" href="#" title="wechat">wechat</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://LLstar.github.io/">name</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">LLstar</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img src="/img/head.jpg" class="js-avatar" style="width: 100%; height: 100%; opacity: 1;">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">LLstar</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">welcome to my blog!</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">Home</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/tags/">Tags</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/LLstar" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+                    
+                        <a class="QQ" target="_blank" href="#" title="QQ">QQ</a>
+                    
+                        <a class="wechat" target="_blank" href="#" title="wechat">wechat</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-利用elementUI实现一个可编辑的表格" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/10/06/利用elementUI实现一个可编辑的表格/" class="article-date">
+      <time datetime="2019-10-06T07:19:48.000Z" itemprop="datePublished">2019-10-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      利用elementUI实现一个可编辑的表格
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue-element-ui/">vue element-ui</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>在使用ElementUI过程中，表格的使用占了很大一部分，但是ElementUI的表格只能实现单纯的展示功能，并不能在展示表格的同时实现表格中单元格的可编辑功能，但是在业务中又需要用到可编辑的表格，于是将ElementUI中的表格和表单结合起来，实现了一个带有表单验证的可编辑表格，刚好可以满足业务需要，同时又方便了表格的使用。</p>
+<a id="more"></a>
+
+<p>代码如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div style=<span class="string">"padding: 20px;"</span>&gt;</span><br><span class="line">    &lt;el-form ref=<span class="string">"form"</span> :model=<span class="string">"formData"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"table-with-input"</span>&gt;</span><br><span class="line">      &lt;el-table :header-cell-style=<span class="string">"&#123; background: '#DCDFE6', color: '#6C6C6C' &#125;"</span> :data=<span class="string">"formData.tableData"</span> border&gt;</span><br><span class="line">        &lt;slot name=<span class="string">"columnheader"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span></span><br><span class="line">        &lt;el-table-column v-<span class="keyword">for</span>=<span class="string">"col in title"</span> :key=<span class="string">"col.prop"</span> :label=<span class="string">"col.label"</span> :prop=<span class="string">"col.prop"</span> min-width=<span class="string">"120px"</span> align=<span class="string">"center"</span>&gt;</span><br><span class="line">          &lt;template slot-scope=<span class="string">"scope"</span>&gt;</span><br><span class="line">            &lt;el-form-item :prop=<span class="string">"`tableData.$&#123;scope.$index&#125;.$&#123;col.prop&#125;`"</span> :rules=<span class="string">"col.rules"</span>&gt;</span><br><span class="line">              &lt;el-input v-<span class="keyword">if</span>=<span class="string">"col.type === 'text'"</span> v-model=<span class="string">"scope.row[col.prop]"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">el-input</span>&gt;</span></span></span><br><span class="line">              &lt;el-input-number</span><br><span class="line">                v-<span class="keyword">if</span>=<span class="string">"col.type === 'money'"</span></span><br><span class="line">                :precision=<span class="string">"col.precision"</span></span><br><span class="line">                :max=<span class="string">"col.max"</span></span><br><span class="line">                :min=<span class="string">"col.min"</span></span><br><span class="line">                v-model=<span class="string">"scope.row[col.prop]"</span></span><br><span class="line">                :controls=<span class="string">"false"</span></span><br><span class="line">              &gt;<span class="xml"><span class="tag">&lt;/<span class="name">el-input-number</span>&gt;</span></span></span><br><span class="line">            &lt;<span class="regexp">/el-form-item&gt;</span></span><br><span class="line"><span class="regexp">          &lt;/</span>template&gt;</span><br><span class="line">        &lt;<span class="regexp">/el-table-column&gt;</span></span><br><span class="line"><span class="regexp">        &lt;slot name="columnfooter"&gt;&lt;/</span>slot&gt;</span><br><span class="line">      &lt;<span class="regexp">/el-table&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>el-form&gt;</span><br><span class="line">  &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      title: [</span><br><span class="line">        &#123;</span><br><span class="line">          prop: <span class="string">'one'</span>,</span><br><span class="line">          label: <span class="string">'一'</span>,</span><br><span class="line">          rules: [&#123; <span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">message</span>: <span class="string">'课时不能为空'</span>, <span class="attr">trigger</span>: [<span class="string">'blur'</span>, <span class="string">'change'</span>] &#125;],</span><br><span class="line">          precision: <span class="number">2</span>,</span><br><span class="line">          type: <span class="string">'money'</span>,</span><br><span class="line">          max: <span class="number">99999</span>,</span><br><span class="line">          min: <span class="number">0</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          prop: <span class="string">'two'</span>,</span><br><span class="line">          label: <span class="string">'二'</span>,</span><br><span class="line">          rules: [&#123; <span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">message</span>: <span class="string">'课时不能为空'</span>, <span class="attr">trigger</span>: [<span class="string">'blur'</span>, <span class="string">'change'</span>] &#125;],</span><br><span class="line">          precision: <span class="number">2</span>,</span><br><span class="line">          type: <span class="string">'money'</span>,</span><br><span class="line">          max: <span class="number">99999</span>,</span><br><span class="line">          min: <span class="number">0</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          prop: <span class="string">'three'</span>,</span><br><span class="line">          label: <span class="string">'三'</span>,</span><br><span class="line">          rules: [&#123; <span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">message</span>: <span class="string">'课时不能为空'</span>, <span class="attr">trigger</span>: [<span class="string">'blur'</span>, <span class="string">'change'</span>] &#125;],</span><br><span class="line">          precision: <span class="number">2</span>,</span><br><span class="line">          type: <span class="string">'money'</span>,</span><br><span class="line">          max: <span class="number">99999</span>,</span><br><span class="line">          min: <span class="number">0</span></span><br><span class="line">        &#125;</span><br><span class="line">      ],</span><br><span class="line">      formData: &#123;</span><br><span class="line">        tableData: [</span><br><span class="line">          &#123;</span><br><span class="line">            one: <span class="number">0</span>,</span><br><span class="line">            two: <span class="number">0</span>,</span><br><span class="line">            three: <span class="number">0</span></span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;,</span><br><span class="line">      singleColumnData: &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  props: &#123;&#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    addCol() &#123;</span><br><span class="line">      <span class="keyword">this</span>.formData.tableData.push(<span class="keyword">this</span>.singleColumnData)</span><br><span class="line">    &#125;,</span><br><span class="line">    delCol(index) &#123;</span><br><span class="line">      <span class="keyword">this</span>.formData.tableData.splice(index, <span class="number">1</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  created() &#123;</span><br><span class="line">    <span class="keyword">this</span>.title.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>.singleColumnData[item.prop] = <span class="number">0</span></span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'单个数据：'</span>, <span class="keyword">this</span>.singleColumnData)</span><br><span class="line">  &#125;,</span><br><span class="line">  components: &#123;&#125;,</span><br><span class="line">  watch: &#123;</span><br><span class="line">    title: &#123;</span><br><span class="line">      handler(val) &#123;</span><br><span class="line">        val.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="keyword">this</span>.singleColumnData[item.prop] = <span class="number">0</span></span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'单个数据：'</span>, <span class="keyword">this</span>.singleColumnData)</span><br><span class="line">      &#125;,</span><br><span class="line">      deep: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;style lang="scss"&gt;</span></span><br><span class="line"><span class="regexp">.table-with-input &#123;</span></span><br><span class="line"><span class="regexp">  /</span>deep/.el-input-number &#123;</span><br><span class="line">    width: <span class="number">100</span>%;</span><br><span class="line">  &#125;</span><br><span class="line">  /deep/.el-table .cell,</span><br><span class="line">  /deep/.el-table--border td:first-child .cell &#123;</span><br><span class="line">    padding: <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  /deep/.el-table--enable-row-hover .el-table__body tr:hover &gt; td &#123;</span><br><span class="line">    background-color: #fff !important;</span><br><span class="line">  &#125;</span><br><span class="line">  /deep/.el-table td &#123;</span><br><span class="line">    padding: <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  /deep/.el-form-item &#123;</span><br><span class="line">    margin-bottom: <span class="number">20</span>px;</span><br><span class="line">  &#125;</span><br><span class="line">  /deep/.el-form-item__content,</span><br><span class="line">  /deep/.el-input-number &#123;</span><br><span class="line">    line-height: <span class="number">35</span>px;</span><br><span class="line">  &#125;</span><br><span class="line">  /deep/.el-input__inner &#123;</span><br><span class="line">    border: none;</span><br><span class="line">    height: <span class="number">35</span>px;</span><br><span class="line">    line-height: <span class="number">35</span>px;</span><br><span class="line">    text-align: center;</span><br><span class="line">    color: #3296fa;</span><br><span class="line">  &#125;</span><br><span class="line">  /deep/.el-form-item__error &#123;</span><br><span class="line">    width: <span class="number">100</span>%;</span><br><span class="line">    text-align: center;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/style&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>其实实现可编辑的表格的原理即在一个表单中添加一个表格，表格的每个单元格就是表单中的每一项，但是注意，需要将表格中的每一行数据作为一个表单的一项，这样才可以实现表单的动态校验。</p>
+<p>表单的动态校验的原则是：将表单中每一项的prop设置为唯一的值，同时prop的值需要同v-model中绑定的值相同，我是将表格中的头数据封装为一个动态的数据，可以实现表单的复用性</p>
+<p><code>:prop=&quot;tableData.${scope.$index}.${col.prop}&quot;</code>，这个属性是重点哦。</p>
+<p>这样我们就实现了一个可编辑的表格，是不是很简单，赶快动手试一下吧。</p>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2019/10/06/利用elementUI实现一个可编辑的表格/">利用elementUI实现一个可编辑的表格</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 LLstar 的个人博客">LLstar</a></p>
+        <p><span>发布时间:</span>2019年10月06日 - 15时19分</p>
+        <p><span>最后更新:</span>2019年10月06日 - 15时20分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2019/10/06/利用elementUI实现一个可编辑的表格/" title="利用elementUI实现一个可编辑的表格">http://yoursite.com/2019/10/06/利用elementUI实现一个可编辑的表格/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/10/06/利用elementUI实现一个可编辑的表格/　　作者: LLstar" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2019/08/24/vue的mixins和slot/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue的mixins和slot</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2019/08/24/vue的mixins和slot/" title="下一篇: vue的mixins和slot">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/10/06/利用elementUI实现一个可编辑的表格/">利用elementUI实现一个可编辑的表格</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/24/vue的mixins和slot/">vue的mixins和slot</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/06/react-electron-atnd搭建项目/">react+electron+atnd搭建项目</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/22/vue插件从封装到发布npm包以及使用的全过程/">vue插件从封装到发布npm包以及使用的全过程</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/21/webpack的使用/">webpack的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/21/electron-vue利用webpack打包实现多页面的入口文件/">electron-vue利用webpack打包实现多页面的入口文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/">eslint+husky+prettier+lint-staged配置前端代码校验规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/29/利用hexo搭建自己的博客/">利用hexo搭建自己的博客</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019 LLstar
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >星星到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+
+  </div>
+</body>
+</html>

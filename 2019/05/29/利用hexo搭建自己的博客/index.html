@@ -8,12 +8,12 @@
   <meta name="description" content="前言作为一个程序员，不论功力高深与否，都要有一个属于自己的博客，来记录自己成长的轨迹以及心得。本教程针对的是不懂技术又想搭建个人博客的小白，简单快速的搭建一个属于自己的个人博客。正所谓站在巨人的肩膀上，本教程参考了别人搭建博客的经历，再加上自己实战经历。 快速开始我采用的搭建博客的方式是使用github + hexo 的方式。 hexo是一个快速、简洁且高效的博客框架(官网介绍)。hexo官网。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="利用hexo搭建自己的博客">
-<meta property="og:url" content="http://yoursite.com/2019/05/30/利用hexo搭建自己的博客/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/05/29/利用hexo搭建自己的博客/index.html">
 <meta property="og:site_name" content="LLstar的个人博客">
 <meta property="og:description" content="前言作为一个程序员，不论功力高深与否，都要有一个属于自己的博客，来记录自己成长的轨迹以及心得。本教程针对的是不懂技术又想搭建个人博客的小白，简单快速的搭建一个属于自己的个人博客。正所谓站在巨人的肩膀上，本教程参考了别人搭建博客的经历，再加上自己实战经历。 快速开始我采用的搭建博客的方式是使用github + hexo 的方式。 hexo是一个快速、简洁且高效的博客框架(官网介绍)。hexo官网。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://i.loli.net/2019/06/20/5d0b51950f72e26880.png">
-<meta property="og:updated_time" content="2019-06-20T11:09:19.939Z">
+<meta property="og:updated_time" content="2019-10-06T07:26:24.407Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="利用hexo搭建自己的博客">
 <meta name="twitter:description" content="前言作为一个程序员，不论功力高深与否，都要有一个属于自己的博客，来记录自己成长的轨迹以及心得。本教程针对的是不懂技术又想搭建个人博客的小白，简单快速的搭建一个属于自己的个人博客。正所谓站在巨人的肩膀上，本教程参考了别人搭建博客的经历，再加上自己实战经历。 快速开始我采用的搭建博客的方式是使用github + hexo 的方式。 hexo是一个快速、简洁且高效的博客框架(官网介绍)。hexo官网。">
@@ -179,8 +179,8 @@
       <div class="body-wrap"><article id="post-利用hexo搭建自己的博客" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/05/30/利用hexo搭建自己的博客/" class="article-date">
-      <time datetime="2019-05-30T03:12:40.430Z" itemprop="datePublished">2019-05-30</time>
+      <a href="/2019/05/29/利用hexo搭建自己的博客/" class="article-date">
+      <time datetime="2019-05-29T07:19:48.000Z" itemprop="datePublished">2019-05-29</time>
 </a>
     </div>
   
@@ -275,12 +275,11 @@
 <h4 id="七、踩坑经历"><a href="#七、踩坑经历" class="headerlink" title="七、踩坑经历"></a>七、踩坑经历</h4><h5 id="1、不蒜子网站统计报错"><a href="#1、不蒜子网站统计报错" class="headerlink" title="1、不蒜子网站统计报错"></a>1、不蒜子网站统计报错</h5><p>采用spfk这个主题，发现他利用不蒜子网站统计不显示，看到不蒜子的官方网站发出了这样的消息：</p>
 <p><img src="https://i.loli.net/2019/06/20/5d0b51950f72e26880.png" alt></p>
 <p>进入hexo博客项目的<code>themes</code>目录下，在<code>spfk/layout/share/after-footer.ejs</code>文件，将</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script <span class="keyword">async</span> src=<span class="string">"https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script <span class="keyword">async</span> src=<span class="string">"https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
 <p>更改为：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script <span class="keyword">async</span> src=<span class="string">"//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>2、</p>
 
       
       
@@ -336,13 +335,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/05/30/利用hexo搭建自己的博客/">利用hexo搭建自己的博客</a></p>
+        <p><span>本文标题:</span><a href="/2019/05/29/利用hexo搭建自己的博客/">利用hexo搭建自己的博客</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 LLstar 的个人博客">LLstar</a></p>
-        <p><span>发布时间:</span>2019年05月30日 - 11时12分</p>
-        <p><span>最后更新:</span>2019年06月20日 - 19时09分</p>
+        <p><span>发布时间:</span>2019年05月29日 - 15时19分</p>
+        <p><span>最后更新:</span>2019年10月06日 - 15时26分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/05/30/利用hexo搭建自己的博客/" title="利用hexo搭建自己的博客">http://yoursite.com/2019/05/30/利用hexo搭建自己的博客/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/05/30/利用hexo搭建自己的博客/　　作者: LLstar" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/05/29/利用hexo搭建自己的博客/" title="利用hexo搭建自己的博客">http://yoursite.com/2019/05/29/利用hexo搭建自己的博客/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/05/29/利用hexo搭建自己的博客/　　作者: LLstar" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -432,7 +431,7 @@
             <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/08/24/vue的mixins和slot/">vue的mixins和slot</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/06/react-electron-atnd搭建项目/">react+electron+atnd搭建项目</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/22/vue插件从封装到发布npm包以及使用的全过程/">vue插件从封装到发布npm包以及使用的全过程</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/21/webpack的使用/">webpack的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/21/electron-vue利用webpack打包实现多页面的入口文件/">electron-vue利用webpack打包实现多页面的入口文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/">eslint+husky+prettier+lint-staged配置前端代码校验规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/30/利用hexo搭建自己的博客/">利用hexo搭建自己的博客</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/10/06/利用elementUI实现一个可编辑的表格/">利用elementUI实现一个可编辑的表格</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/24/vue的mixins和slot/">vue的mixins和slot</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/06/react-electron-atnd搭建项目/">react+electron+atnd搭建项目</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/22/vue插件从封装到发布npm包以及使用的全过程/">vue插件从封装到发布npm包以及使用的全过程</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/21/webpack的使用/">webpack的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/21/electron-vue利用webpack打包实现多页面的入口文件/">electron-vue利用webpack打包实现多页面的入口文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/">eslint+husky+prettier+lint-staged配置前端代码校验规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/29/利用hexo搭建自己的博客/">利用hexo搭建自己的博客</a></li></ul>
     <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
