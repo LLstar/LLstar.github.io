@@ -375,6 +375,73 @@
 
 
   
+    <article id="post-温故而知新-JavaScript数组常用API" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/07/10/温故而知新-JavaScript数组常用API/" class="article-date">
+      <time datetime="2019-07-10T10:15:40.000Z" itemprop="datePublished">2019-07-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/10/温故而知新-JavaScript数组常用API/">温故而知新--JavaScript数组常用API</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="ES6中数组的扩展"><a href="#ES6中数组的扩展" class="headerlink" title="ES6中数组的扩展"></a>ES6中数组的扩展</h3><h4 id="1、Array-from"><a href="#1、Array-from" class="headerlink" title="1、Array.from()"></a>1、Array.from()</h4><p><code>Array.from</code>用于将两类对象转为真正的数组：类似数组的对象和可遍历的对象（包括ES6中新增的数据结构Set和Map）。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arrLike = &#123;</span><br><span class="line">    <span class="string">"0"</span>: <span class="string">"a"</span>,</span><br><span class="line">    <span class="string">"1"</span>: <span class="string">"b"</span>,</span><br><span class="line">    <span class="string">"2"</span>: <span class="string">"c"</span>,</span><br><span class="line">    length: <span class="number">3</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// ES5的写法</span></span><br><span class="line"><span class="keyword">let</span> arr1 = [].slice.call(arrLike) <span class="comment">// ["a", "b", "c"]</span></span><br><span class="line"><span class="comment">// ES6的写法</span></span><br><span class="line"><span class="keyword">let</span> arr2 = <span class="built_in">Array</span>.from(arrLike) <span class="comment">// ["a", "b", "c"]</span></span><br></pre></td></tr></table></figure>
+
+<p><code>Array.from</code>可以将部署了Iterator接口的数据结构转为数组，同时<code>Array.from</code>方法还支持类似数组的对象，所谓类似数组的对象其本质特性为必须用length属性，任何有length属性的对象，都可以通过<code>Array.from</code>方法将其转为数组，而扩展运算符只能将具有Iterator接口的数据结构转为数组。</p>
+          
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2019/07/10/温故而知新-JavaScript数组常用API/#more">小星星 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-vue插件从封装到发布npm包以及使用的全过程" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
