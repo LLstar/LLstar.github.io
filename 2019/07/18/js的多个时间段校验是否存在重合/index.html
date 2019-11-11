@@ -3,23 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>electron-vue利用webpack打包实现多页面的入口文件 | LLstar的个人博客</title>
+  <title>js的多个时间段校验是否存在重合 | LLstar的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="项目需要在electron的项目中新打开一个窗口，利用webpack作为静态资源打包器，发现在webpack中可以设置多页面的入口，今天来讲一下我在electron中利用webpack建立多页面入口的踩坑经验。 1、webpack的核心概念 Entry：入口，Webpack执行构建的第一步从Entry开始； Module：模块，在Webpack里一切皆模块，一个模块对应着一个文件。Webpack会">
-<meta name="keywords" content="webpack electron">
+  <meta name="description" content="实现思路在设置多个时间段时需要实时校验这些设置的时间段是否存在重合，校验重合的思想是：  首先将这些时间段按照开始时间的升序排列 其次，对这些排序过后的数组对象进行循环遍历，比较当前时间对象的结束时间是否大于下一个时间对象的开始时间，如果大于，则表明时间存在重合，就将这两项return出去，结束循环。 最后，实时监听这个数组的长度变化，如果数组长度存在，则表明存在重合项，否则不存在重合项。">
+<meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="electron-vue利用webpack打包实现多页面的入口文件">
-<meta property="og:url" content="http://yoursite.com/2019/06/21/electron-vue利用webpack打包实现多页面的入口文件/index.html">
+<meta property="og:title" content="js的多个时间段校验是否存在重合">
+<meta property="og:url" content="http://yoursite.com/2019/07/18/js的多个时间段校验是否存在重合/index.html">
 <meta property="og:site_name" content="LLstar的个人博客">
-<meta property="og:description" content="项目需要在electron的项目中新打开一个窗口，利用webpack作为静态资源打包器，发现在webpack中可以设置多页面的入口，今天来讲一下我在electron中利用webpack建立多页面入口的踩坑经验。 1、webpack的核心概念 Entry：入口，Webpack执行构建的第一步从Entry开始； Module：模块，在Webpack里一切皆模块，一个模块对应着一个文件。Webpack会">
+<meta property="og:description" content="实现思路在设置多个时间段时需要实时校验这些设置的时间段是否存在重合，校验重合的思想是：  首先将这些时间段按照开始时间的升序排列 其次，对这些排序过后的数组对象进行循环遍历，比较当前时间对象的结束时间是否大于下一个时间对象的开始时间，如果大于，则表明时间存在重合，就将这两项return出去，结束循环。 最后，实时监听这个数组的长度变化，如果数组长度存在，则表明存在重合项，否则不存在重合项。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://i.loli.net/2019/06/20/5d0aeee31efa696976.png">
-<meta property="og:image" content="https://i.loli.net/2019/06/20/5d0aef394308586575.png">
-<meta property="og:updated_time" content="2019-06-21T08:17:52.006Z">
+<meta property="og:updated_time" content="2019-11-11T10:07:40.080Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="electron-vue利用webpack打包实现多页面的入口文件">
-<meta name="twitter:description" content="项目需要在electron的项目中新打开一个窗口，利用webpack作为静态资源打包器，发现在webpack中可以设置多页面的入口，今天来讲一下我在electron中利用webpack建立多页面入口的踩坑经验。 1、webpack的核心概念 Entry：入口，Webpack执行构建的第一步从Entry开始； Module：模块，在Webpack里一切皆模块，一个模块对应着一个文件。Webpack会">
-<meta name="twitter:image" content="https://i.loli.net/2019/06/20/5d0aeee31efa696976.png">
+<meta name="twitter:title" content="js的多个时间段校验是否存在重合">
+<meta name="twitter:description" content="实现思路在设置多个时间段时需要实时校验这些设置的时间段是否存在重合，校验重合的思想是：  首先将这些时间段按照开始时间的升序排列 其次，对这些排序过后的数组对象进行循环遍历，比较当前时间对象的结束时间是否大于下一个时间对象的开始时间，如果大于，则表明时间存在重合，就将这两项return出去，结束循环。 最后，实时监听这个数组的长度变化，如果数组长度存在，则表明存在重合项，否则不存在重合项。">
   
     <link rel="alternative" href="/atom.xml" title="LLstar的个人博客" type="application/atom+xml">
   
@@ -178,11 +175,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-electron-vue利用webpack打包实现多页面的入口文件" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-js的多个时间段校验是否存在重合" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/06/21/electron-vue利用webpack打包实现多页面的入口文件/" class="article-date">
-      <time datetime="2019-06-21T08:11:00.000Z" itemprop="datePublished">2019-06-21</time>
+      <a href="/2019/07/18/js的多个时间段校验是否存在重合/" class="article-date">
+      <time datetime="2019-07-18T10:06:07.000Z" itemprop="datePublished">2019-07-18</time>
 </a>
     </div>
   
@@ -195,7 +192,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      electron-vue利用webpack打包实现多页面的入口文件
+      js的多个时间段校验是否存在重合
     </h1>
   
 
@@ -206,7 +203,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack-electron/">webpack electron</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -216,54 +213,21 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>项目需要在electron的项目中新打开一个窗口，利用webpack作为静态资源打包器，发现在webpack中可以设置多页面的入口，今天来讲一下我在electron中利用webpack建立多页面入口的踩坑经验。</p>
-<h4 id="1、webpack的核心概念"><a href="#1、webpack的核心概念" class="headerlink" title="1、webpack的核心概念"></a>1、webpack的核心概念</h4><ul>
-<li>Entry：入口，Webpack执行构建的第一步从Entry开始；</li>
-<li>Module：模块，在Webpack里一切皆模块，一个模块对应着一个文件。Webpack会从配置的Entry开始递归找出所有依赖的模块。</li>
-<li>Chunk：代码块，一个Chunk由多个模块组合而成，用于代码合并与分割。</li>
-<li>Loader：模块转换器，用于把模块原内容按照需求转换成新内容。</li>
-<li>Plugin：扩展插件，在Webpack构建流程中的特定时机注入扩展逻辑来改变构建结果或做你想要的事情。</li>
-<li>Output：输出结果，在Webpack经过一系列处理并得出最终想要的代码后输出结果。</li>
+        <h4 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h4><p>在设置多个时间段时需要实时校验这些设置的时间段是否存在重合，校验重合的思想是：</p>
+<ul>
+<li>首先将这些时间段按照开始时间的升序排列</li>
+<li>其次，对这些排序过后的数组对象进行循环遍历，比较当前时间对象的结束时间是否大于下一个时间对象的开始时间，如果大于，则表明时间存在重合，就将这两项return出去，结束循环。</li>
+<li>最后，实时监听这个数组的长度变化，如果数组长度存在，则表明存在重合项，否则不存在重合项。</li>
 </ul>
 <a id="more"></a>
 
-<h4 id="2、配置多页面的入口文件"><a href="#2、配置多页面的入口文件" class="headerlink" title="2、配置多页面的入口文件"></a>2、配置多页面的入口文件</h4><p>electron构建后的项目目录如下：</p>
-<p><img src="https://i.loli.net/2019/06/20/5d0aeee31efa696976.png" alt></p>
-<ul>
-<li><h5 id="创建新的页面"><a href="#创建新的页面" class="headerlink" title="创建新的页面"></a>创建新的页面</h5><p>vue-cli生成的项目中只有一个main.js主入口的js文件来处理所有的vue页面，我们创建多个页面需要生成一个这个页面相对应的js文件，保存该页面中包含的内容。</p>
-</li>
-<li><h5 id="配置多页面的入口文件"><a href="#配置多页面的入口文件" class="headerlink" title="配置多页面的入口文件"></a>配置多页面的入口文件</h5><p>electron-vue创建的项目中有三个webpack的配置，我主要是在webpack.renderer.config中配置多个入口，生成多页面的入口文件，代码如下：</p>
-<p><img src="https://i.loli.net/2019/06/20/5d0aef394308586575.png" alt></p>
-</li>
-</ul>
-<p>webpack中的HtmlWebpackPlugin插件是用来简单创建HTML文件，用于服务器访问。必须在新建HtmlWebpackPlugin中写chunks,不然无法识别，页面加载不出来</p>
-<ul>
-<li><p>electron中新建窗口，访问新生成的页面</p>
-<p>electron中src的main文件中的index.js为主进程，在该页面中新建窗口，调用新生成的HTML文件，代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const dialpadUrl = process.env.NODE_ENV === &apos;development&apos;</span><br><span class="line">  ? `http://localhost:9080/dialpad.html`</span><br><span class="line">  : `file://$&#123;__dirname&#125;/dialpad.html`</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 对时间数组进行排序</span></span><br><span class="line">sortArr() &#123;</span><br><span class="line">    <span class="keyword">this</span>.arrSort = clonedeep(<span class="keyword">this</span>.form.data)</span><br><span class="line">    <span class="keyword">this</span>.arrSort = <span class="keyword">this</span>.arrSort.filter(<span class="function"><span class="params">item</span> =&gt;</span> item.daterange &amp;&amp; item.daterange.length)</span><br><span class="line">    <span class="keyword">this</span>.arrSort.sort(<span class="keyword">this</span>.compare(<span class="string">'startTime'</span>))</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.arrSort.length - <span class="number">1</span>; i += <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.arrSort[i].endTime &gt; <span class="keyword">this</span>.arrSort[i + <span class="number">1</span>].startTime) &#123;</span><br><span class="line">            <span class="keyword">return</span> [<span class="keyword">this</span>.arrSort[i], <span class="keyword">this</span>.arrSort[i + <span class="number">1</span>]]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">undefined</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="comment">// 按照传入的属性排序</span></span><br><span class="line">compare(prop) &#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="function">(<span class="params">a, b</span>) =&gt;</span> &#123;</span><br><span class="line">     <span class="keyword">const</span> val1 = a[prop]</span><br><span class="line">     <span class="keyword">const</span> val2 = b[prop]</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">`2019-11-1 <span class="subst">$&#123;val1&#125;</span>`</span>) - <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">`2019-11-1 <span class="subst">$&#123;val2&#125;</span>`</span>)</span><br><span class="line">   &#125;</span><br><span class="line">&#125;,</span><br><span class="line"><span class="comment">// 时间改变时去实时校验是否存在重复项</span></span><br><span class="line">changeTime(item, index) &#123;</span><br><span class="line">   <span class="keyword">this</span>.$forceUpdate()</span><br><span class="line">   item.startTime = item.daterange ? item.daterange[<span class="number">0</span>] : <span class="literal">null</span></span><br><span class="line">   item.endTime = item.daterange ? item.daterange[<span class="number">1</span>] : <span class="literal">null</span></span><br><span class="line">   <span class="keyword">if</span> (item.startTime === item.endTime &amp;&amp; item.daterange) &#123;</span><br><span class="line">       <span class="keyword">this</span>.$message(&#123;</span><br><span class="line">       	 type: <span class="string">'error'</span>,</span><br><span class="line">         message: <span class="string">'结束时间不能等于开始时间!'</span>,</span><br><span class="line">         showClose: <span class="literal">true</span></span><br><span class="line">       &#125;)</span><br><span class="line">       <span class="keyword">this</span>.form.data[index] = &#123;</span><br><span class="line">         sequence: item.sequence,</span><br><span class="line">         daterange: <span class="literal">null</span>,</span><br><span class="line">         startTime: <span class="string">''</span>,</span><br><span class="line">         endTime: <span class="string">''</span></span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> data = <span class="keyword">this</span>.sortArr()</span><br><span class="line">    <span class="keyword">this</span>.isSameData = data || []</span><br><span class="line">    <span class="keyword">const</span> arr = <span class="keyword">this</span>.isUsefulDate()</span><br><span class="line">    <span class="keyword">this</span>.illegalData = arr || []</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>创建新窗口打开页面的地址。electron的win.loadURL(url[, options])中的加载的文件方式包含：</p>
-<ul>
-<li>httpReferrer：一个HTTP Referrer url</li>
-<li>userAgent 发起请求的 userAgent</li>
-<li>extraHeaders：用”\n“分割的额外标题</li>
-<li>baseURLForDataURL：要加载的数据文件的根URL(带有路径分隔符)，只有当指定的url是一个数据url并需要加载其他文件时，才需要这样做</li>
+<h4 id="卡壳地方"><a href="#卡壳地方" class="headerlink" title="卡壳地方"></a>卡壳地方</h4><ul>
+<li>对这个时间对象有重合项不知道从哪儿着手；</li>
+<li>比较的时候没有对该数组进行排序，直接用遍历的数组对象中的当前时间对象与其他时间对象进行比较，该项的开始时间和结束时间是否在其他项的开始结束时间中间，如果有就保存下来，利用了两层循环，导致无法比较出上一项的结束时间与下一项的开始时间相同的时候也校验为重复项，代码逻辑不清晰；</li>
+<li>利用两层循环不仅耗性能，而且在比较时也不能准确判断出是否真的存在重复项，排查错误不好处理。</li>
 </ul>
-<p>其实我也没太懂这些都是什么，反正据我理解，url加载的只能是远程地址(如：http://)或是本地的HTML文件路径(file://)</p>
-<p>参考文章：<a href="https://segmentfault.com/a/1190000014984842#articleHeader0" target="_blank" rel="noopener">https://segmentfault.com/a/1190000014984842#articleHeader0</a> </p>
-</li>
-<li><h5 id="打包报错"><a href="#打包报错" class="headerlink" title="打包报错"></a>打包报错</h5><p>上述就是我在electron-vue中利用webpack实现多页面入口的全过程，不过最后打包时出现了错误，上网搜了一下，说是node内存溢出的问题，在package.json中手动设置node的内存大小就可以啦</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;buildAll&quot;: &quot;node --max-old-space-size=4096 .electron-vue/build.js &amp;&amp; electron-builder&quot;,</span><br><span class="line">    &quot;build&quot;: &quot;node --max-old-space-size=4096 .electron-vue/build.js &amp;&amp; electron-builder --win --   ia32 --publish always&quot;,</span><br><span class="line">    &quot;build:dir&quot;: &quot;node --max-old-space-size=4096 .electron-vue/build.js &amp;&amp; electron-builder --	win --ia32 --dir&quot;,</span><br><span class="line">    &quot;build:clean&quot;: &quot;cross-env BUILD_TARGET=clean node .electron-vue/build.js&quot;,</span><br><span class="line">    &quot;build:web&quot;: &quot;cross-env BUILD_TARGET=web node .electron-vue/build.js&quot;,</span><br><span class="line">    &quot;dev&quot;: &quot;node --max-old-space-size=4096 .electron-vue/dev-runner.js&quot;,</span><br><span class="line">    &quot;lint&quot;: &quot;eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter src&quot;,</span><br><span class="line">    &quot;lint:fix&quot;: &quot;eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter --fix src&quot;,</span><br><span class="line">    &quot;pack&quot;: &quot;npm run pack:main &amp;&amp; npm run pack:renderer&quot;,</span><br><span class="line">    &quot;pack:main&quot;: &quot;cross-env NODE_ENV=production webpack --progress --colors --config .electron-   vue/webpack.main.config.js&quot;,</span><br><span class="line">    &quot;pack:renderer&quot;: &quot;cross-env NODE_ENV=production webpack --progress --colors --config           .electron-vue/webpack.renderer.config.js&quot;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-
-<p>参考文章：<a href="https://segmentfault.com/a/1190000010437948" target="_blank" rel="noopener">https://segmentfault.com/a/1190000010437948</a> </p>
-<h4 id="3、多个窗口之间可以利用vuex-electron插件实现数据共享"><a href="#3、多个窗口之间可以利用vuex-electron插件实现数据共享" class="headerlink" title="3、多个窗口之间可以利用vuex-electron插件实现数据共享"></a>3、多个窗口之间可以利用vuex-electron插件实现数据共享</h4><p>​    多个窗口之间本来使用ipc通信来传递数据，发现这样的做法太麻烦啦，就发现了vuex-electron插件可以实现多个窗口之间共享同一个vuex数据。我来说一下它的使用方法：</p>
-<p>在src/renderer/store/index.js中引入createSharedMutations和createPersistedState，如果有时候状态没有发生变化，可以将createSharedMutations注释掉(为什么注释掉，暂时还未找到原因)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line">import Vuex from &apos;vuex&apos;</span><br><span class="line"></span><br><span class="line">import &#123; createPersistedState, createSharedMutations &#125; from &apos;vuex-electron&apos;</span><br><span class="line"></span><br><span class="line">import modules from &apos;./modules&apos;</span><br><span class="line"></span><br><span class="line">Vue.use(Vuex)</span><br><span class="line"></span><br><span class="line">export default new Vuex.Store(&#123;</span><br><span class="line">  modules,</span><br><span class="line">  plugins: [</span><br><span class="line">    createPersistedState(),  // 创建数据持久化，不需要时可以删除</span><br><span class="line">    createSharedMutations()  // 创建共享的mutations</span><br><span class="line">  ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>在多个窗口之间就可以用共用同一个vuex中的数据，这样就省去了繁琐的ipc通信，获取数据更方便。</p>
-<p>这就是我的分享，有什么不对的地方欢迎指正。</p>
 
       
       
@@ -319,13 +283,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/06/21/electron-vue利用webpack打包实现多页面的入口文件/">electron-vue利用webpack打包实现多页面的入口文件</a></p>
+        <p><span>本文标题:</span><a href="/2019/07/18/js的多个时间段校验是否存在重合/">js的多个时间段校验是否存在重合</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 LLstar 的个人博客">LLstar</a></p>
-        <p><span>发布时间:</span>2019年06月21日 - 16时11分</p>
-        <p><span>最后更新:</span>2019年06月21日 - 16时17分</p>
+        <p><span>发布时间:</span>2019年07月18日 - 18时06分</p>
+        <p><span>最后更新:</span>2019年11月11日 - 18时07分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/06/21/electron-vue利用webpack打包实现多页面的入口文件/" title="electron-vue利用webpack打包实现多页面的入口文件">http://yoursite.com/2019/06/21/electron-vue利用webpack打包实现多页面的入口文件/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/06/21/electron-vue利用webpack打包实现多页面的入口文件/　　作者: LLstar" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/07/18/js的多个时间段校验是否存在重合/" title="js的多个时间段校验是否存在重合">http://yoursite.com/2019/07/18/js的多个时间段校验是否存在重合/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/07/18/js的多个时间段校验是否存在重合/　　作者: LLstar" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -338,18 +302,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/06/21/webpack的使用/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/08/06/react-electron-atnd搭建项目/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          webpack的使用
+          react+electron+atnd搭建项目
         
       </div>
     </a>
   
   
-    <a href="/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">eslint+husky+prettier+lint-staged配置前端代码校验规范</div>
+    <a href="/2019/07/10/温故而知新-JavaScript数组常用API/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">温故而知新--JavaScript数组常用API</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -360,7 +324,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、webpack的核心概念"><span class="toc-number">1.</span> <span class="toc-text">1、webpack的核心概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、配置多页面的入口文件"><span class="toc-number">2.</span> <span class="toc-text">2、配置多页面的入口文件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#创建新的页面"><span class="toc-number">2.1.</span> <span class="toc-text">创建新的页面</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#配置多页面的入口文件"><span class="toc-number">2.2.</span> <span class="toc-text">配置多页面的入口文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#打包报错"><span class="toc-number">2.3.</span> <span class="toc-text">打包报错</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、多个窗口之间可以利用vuex-electron插件实现数据共享"><span class="toc-number">3.</span> <span class="toc-text">3、多个窗口之间可以利用vuex-electron插件实现数据共享</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#实现思路"><span class="toc-number">1.</span> <span class="toc-text">实现思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#卡壳地方"><span class="toc-number">2.</span> <span class="toc-text">卡壳地方</span></a></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -411,13 +375,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/06/21/webpack的使用/" title="上一篇: webpack的使用">
+            <a href="/2019/08/06/react-electron-atnd搭建项目/" title="上一篇: react+electron+atnd搭建项目">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/" title="下一篇: eslint+husky+prettier+lint-staged配置前端代码校验规范">
+            <a href="/2019/07/10/温故而知新-JavaScript数组常用API/" title="下一篇: 温故而知新--JavaScript数组常用API">
                 <i class="fa fa-angle-right"></i>
             </a>
         

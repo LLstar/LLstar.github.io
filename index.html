@@ -375,6 +375,75 @@
 
 
   
+    <article id="post-js的多个时间段校验是否存在重合" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/07/18/js的多个时间段校验是否存在重合/" class="article-date">
+      <time datetime="2019-07-18T10:06:07.000Z" itemprop="datePublished">2019-07-18</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/18/js的多个时间段校验是否存在重合/">js的多个时间段校验是否存在重合</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h4 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h4><p>在设置多个时间段时需要实时校验这些设置的时间段是否存在重合，校验重合的思想是：</p>
+<ul>
+<li>首先将这些时间段按照开始时间的升序排列</li>
+<li>其次，对这些排序过后的数组对象进行循环遍历，比较当前时间对象的结束时间是否大于下一个时间对象的开始时间，如果大于，则表明时间存在重合，就将这两项return出去，结束循环。</li>
+<li>最后，实时监听这个数组的长度变化，如果数组长度存在，则表明存在重合项，否则不存在重合项。</li>
+</ul>
+          
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2019/07/18/js的多个时间段校验是否存在重合/#more">小星星 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-温故而知新-JavaScript数组常用API" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
