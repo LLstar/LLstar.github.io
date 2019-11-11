@@ -178,6 +178,76 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-仿elementUI的周选择日历组件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/11/11/仿elementUI的周选择日历组件/" class="article-date">
+      <time datetime="2019-11-11T10:10:05.000Z" itemprop="datePublished">2019-11-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/11/仿elementUI的周选择日历组件/">仿elementUI的周选择日历组件</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>日历的控件数不胜数，大多数日历控件都是用来选择日期，用来找出具体的某一天，但是我们的需求是需要点击本周的任意一天，选择本周的时间，找了很多组件，并没有发现合适的组件，于是决定再造一个轮子，自己仿照elementUI中的日期选择选择周的日期组件，来封装一个选择周的日历组件。</p>
+<blockquote>
+<h4 id="UI图样式如下：UI样式是仿照elementUI中的日期选择器（element的样式比较好看）"><a href="#UI图样式如下：UI样式是仿照elementUI中的日期选择器（element的样式比较好看）" class="headerlink" title="UI图样式如下：UI样式是仿照elementUI中的日期选择器（element的样式比较好看）"></a>UI图样式如下：UI样式是仿照elementUI中的日期选择器（element的样式比较好看）</h4></blockquote>
+<p><img src="https://i.loli.net/2019/11/07/6XfbFndIAE4gzUi.png" alt></p>
+<blockquote>
+<h4 id="实现分析"><a href="#实现分析" class="headerlink" title="实现分析"></a>实现分析</h4></blockquote>
+<p>观察到日历的排列为一个7X6的布局，保证日历的显示是定宽和定高的，不会随着月份的改变而更改，而且7X6能保证该月的日期都能正常显示。如何将当月的日期在日期中绘制出来？观察发现，日历的第一周是当月的1号所在的周，结束日期找到当月的最后一天所在周的最后一天，从开始周的第一天到最后周的最后一天中间如果相隔35天，则再结束日期再向后顺延一周，否则就是当前选择的结束日期。</p>
+          
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/周日历组件-js/">周日历组件 js</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2019/11/11/仿elementUI的周选择日历组件/#more">小星星 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-利用elementUI实现一个可编辑的表格" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -778,72 +848,10 @@
 
 
   
-    <article id="post-利用hexo搭建自己的博客" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2019/05/29/利用hexo搭建自己的博客/" class="article-date">
-      <time datetime="2019-05-29T07:19:48.000Z" itemprop="datePublished">2019-05-29</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/29/利用hexo搭建自己的博客/">利用hexo搭建自己的博客</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>作为一个程序员，不论功力高深与否，都要有一个属于自己的博客，来记录自己成长的轨迹以及心得。本教程针对的是不懂技术又想搭建个人博客的小白，简单快速的搭建一个属于自己的个人博客。正所谓站在巨人的肩膀上，本教程参考了别人搭建博客的经历，再加上自己实战经历。</p>
-<h3 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h3><p>我采用的搭建博客的方式是使用github + hexo 的方式。</p>
-<p>hexo是一个快速、简洁且高效的博客框架(官网介绍)。<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">hexo官网</a>。</p>
-          
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/hexo/">hexo</a>
-    </div>
-
-
-      
-      
-        <p class="article-more-link">
-          <a  href="/2019/05/29/利用hexo搭建自己的博客/#more">小星星 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 </div>
       <footer id="footer">
