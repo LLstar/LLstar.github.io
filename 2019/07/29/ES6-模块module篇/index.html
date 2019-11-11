@@ -3,21 +3,20 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>利用hexo搭建自己的博客 | LLstar的个人博客</title>
+  <title>ES6-模块module篇 | LLstar的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言作为一个程序员，不论功力高深与否，都要有一个属于自己的博客，来记录自己成长的轨迹以及心得。本教程针对的是不懂技术又想搭建个人博客的小白，简单快速的搭建一个属于自己的个人博客。正所谓站在巨人的肩膀上，本教程参考了别人搭建博客的经历，再加上自己实战经历。 快速开始我采用的搭建博客的方式是使用github + hexo 的方式。 hexo是一个快速、简洁且高效的博客框架(官网介绍)。hexo官网。">
+  <meta name="description" content="模块化的开发方式可以提高代码复用率，方便进行代码的管理。通常一个文件就是一个模块，有自己的作用域，只向外暴露特定的变量和函数。在js加入模块语法之前，我们通常所用的模块化规范有CommonJS和AMD。一直傻傻分不清什么时候用require，什么时候需要用import，感觉并没有什么区别，用什么都没有报错，看完ES6的模块讲解，来区分一下这两者的区别，整理一下这两者分别在什么场合使用。 Commo">
+<meta name="keywords" content="ES6 module">
 <meta property="og:type" content="article">
-<meta property="og:title" content="利用hexo搭建自己的博客">
-<meta property="og:url" content="http://yoursite.com/2019/05/29/利用hexo搭建自己的博客/index.html">
+<meta property="og:title" content="ES6-模块module篇">
+<meta property="og:url" content="http://yoursite.com/2019/07/29/ES6-模块module篇/index.html">
 <meta property="og:site_name" content="LLstar的个人博客">
-<meta property="og:description" content="前言作为一个程序员，不论功力高深与否，都要有一个属于自己的博客，来记录自己成长的轨迹以及心得。本教程针对的是不懂技术又想搭建个人博客的小白，简单快速的搭建一个属于自己的个人博客。正所谓站在巨人的肩膀上，本教程参考了别人搭建博客的经历，再加上自己实战经历。 快速开始我采用的搭建博客的方式是使用github + hexo 的方式。 hexo是一个快速、简洁且高效的博客框架(官网介绍)。hexo官网。">
+<meta property="og:description" content="模块化的开发方式可以提高代码复用率，方便进行代码的管理。通常一个文件就是一个模块，有自己的作用域，只向外暴露特定的变量和函数。在js加入模块语法之前，我们通常所用的模块化规范有CommonJS和AMD。一直傻傻分不清什么时候用require，什么时候需要用import，感觉并没有什么区别，用什么都没有报错，看完ES6的模块讲解，来区分一下这两者的区别，整理一下这两者分别在什么场合使用。 Commo">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://i.loli.net/2019/06/20/5d0b51950f72e26880.png">
-<meta property="og:updated_time" content="2019-10-06T07:26:24.407Z">
+<meta property="og:updated_time" content="2019-11-11T10:17:51.554Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="利用hexo搭建自己的博客">
-<meta name="twitter:description" content="前言作为一个程序员，不论功力高深与否，都要有一个属于自己的博客，来记录自己成长的轨迹以及心得。本教程针对的是不懂技术又想搭建个人博客的小白，简单快速的搭建一个属于自己的个人博客。正所谓站在巨人的肩膀上，本教程参考了别人搭建博客的经历，再加上自己实战经历。 快速开始我采用的搭建博客的方式是使用github + hexo 的方式。 hexo是一个快速、简洁且高效的博客框架(官网介绍)。hexo官网。">
-<meta name="twitter:image" content="https://i.loli.net/2019/06/20/5d0b51950f72e26880.png">
+<meta name="twitter:title" content="ES6-模块module篇">
+<meta name="twitter:description" content="模块化的开发方式可以提高代码复用率，方便进行代码的管理。通常一个文件就是一个模块，有自己的作用域，只向外暴露特定的变量和函数。在js加入模块语法之前，我们通常所用的模块化规范有CommonJS和AMD。一直傻傻分不清什么时候用require，什么时候需要用import，感觉并没有什么区别，用什么都没有报错，看完ES6的模块讲解，来区分一下这两者的区别，整理一下这两者分别在什么场合使用。 Commo">
   
     <link rel="alternative" href="/atom.xml" title="LLstar的个人博客" type="application/atom+xml">
   
@@ -176,11 +175,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-利用hexo搭建自己的博客" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-ES6-模块module篇" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/05/29/利用hexo搭建自己的博客/" class="article-date">
-      <time datetime="2019-05-29T07:19:48.000Z" itemprop="datePublished">2019-05-29</time>
+      <a href="/2019/07/29/ES6-模块module篇/" class="article-date">
+      <time datetime="2019-07-29T10:14:52.000Z" itemprop="datePublished">2019-07-29</time>
 </a>
     </div>
   
@@ -193,7 +192,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      利用hexo搭建自己的博客
+      ES6-模块module篇
     </h1>
   
 
@@ -201,12 +200,12 @@
       
       <div class="article-info article-info-post">
         
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/hexo/">hexo</a>
-    </div>
-
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6-module/">ES6 module</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -214,71 +213,34 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>作为一个程序员，不论功力高深与否，都要有一个属于自己的博客，来记录自己成长的轨迹以及心得。本教程针对的是不懂技术又想搭建个人博客的小白，简单快速的搭建一个属于自己的个人博客。正所谓站在巨人的肩膀上，本教程参考了别人搭建博客的经历，再加上自己实战经历。</p>
-<h3 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h3><p>我采用的搭建博客的方式是使用github + hexo 的方式。</p>
-<p>hexo是一个快速、简洁且高效的博客框架(官网介绍)。<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">hexo官网</a>。</p>
+        <p>模块化的开发方式可以提高代码复用率，方便进行代码的管理。通常一个文件就是一个模块，有自己的作用域，只向外暴露特定的变量和函数。在js加入模块语法之前，我们通常所用的模块化规范有CommonJS和AMD。一直傻傻分不清什么时候用<code>require</code>，什么时候需要用<code>import</code>，感觉并没有什么区别，用什么都没有报错，看完ES6的模块讲解，来区分一下这两者的区别，整理一下这两者分别在什么场合使用。</p>
+<h4 id="CommonJS和AMD"><a href="#CommonJS和AMD" class="headerlink" title="CommonJS和AMD"></a>CommonJS和AMD</h4><ul>
+<li>Node.js中主要是用CommonJS规范，CommonJS有四个重要的环境变量为模块化的实现提供支持：<code>module</code>、<code>exports</code>、<code>require</code>、<code>global</code>。用<code>module.exports</code>定义当前模块对外输出的接口，用<code>require</code>加载模块。Common JS用同步的方式加载模块。</li>
+</ul>
 <a id="more"></a>
 
-<h4 id="一、安装Git"><a href="#一、安装Git" class="headerlink" title="一、安装Git"></a>一、安装Git</h4><ul>
-<li>Windows：下载并安装 <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">git</a>.</li>
-<li>Mac：使用 <a href="http://mxcl.github.com/homebrew/" target="_blank" rel="noopener">Homebrew</a>, <a href="http://www.macports.org/" target="_blank" rel="noopener">MacPorts</a> ：<code>brew install git</code>;或下载 <a href="http://sourceforge.net/projects/git-osx-installer/" target="_blank" rel="noopener">安装程序</a> 安装。</li>
-</ul>
-<h4 id="二、安装-Node-js"><a href="#二、安装-Node-js" class="headerlink" title="二、安装 Node.js"></a>二、安装 Node.js</h4><ul>
-<li>安装 Node.js 的最佳方式是使用 <a href="https://github.com/creationix/nvm" target="_blank" rel="noopener">nvm</a>。 </li>
-<li>或者您也可以下载 <a href="http://nodejs.org/" target="_blank" rel="noopener">安装程序</a> 来安装。 </li>
-</ul>
-<h4 id="三、在GitHub上创建GitHub-Pages项目"><a href="#三、在GitHub上创建GitHub-Pages项目" class="headerlink" title="三、在GitHub上创建GitHub Pages项目"></a>三、在GitHub上创建GitHub Pages项目</h4><ul>
-<li><p>创建github仓库，命名格式为：github用户名+github.io（前提是要有github账号），GitHub会识别并自动将该仓库设为GitHub Pages。用户主页是唯一的，填其他的名称会被当做是普通项目。</p>
-</li>
-<li><p>克隆刚刚创建的项目仓库到本地，新建一个index.html页面，填入一些修改信息。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> 项目名</span><br><span class="line">$ <span class="built_in">echo</span> <span class="string">'Hello World'</span> &gt; index.html</span><br><span class="line">$ git add *</span><br><span class="line">$ git commit -m <span class="string">'first commit'</span></span><br><span class="line">$ git push -u origin master</span><br></pre></td></tr></table></figure>
-
-<p>这时候，打开了浏览器，输入<a href="https://username.github.io，就可以成功访问啦。（出现Hello" target="_blank" rel="noopener">https://username.github.io，就可以成功访问啦。（出现Hello</a> World表示成功啦）。</p>
-</li>
-</ul>
-<h4 id="四、安装并启动hexo"><a href="#四、安装并启动hexo" class="headerlink" title="四、安装并启动hexo"></a>四、安装并启动hexo</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo </span><br><span class="line">$ yarn add global hexo // 全局安装hexo</span><br><span class="line">// 手动创建一个文件夹，我的文件夹为Blog</span><br><span class="line">$ <span class="built_in">cd</span> Blog</span><br><span class="line">$ hexo init 初始化项目，新建一个网站</span><br><span class="line">$ hexo install </span><br><span class="line">$ hexo gengerate // 简写：hexo g 生成静态网页</span><br><span class="line">$ hexo server // 简写：hexo s 启动本地服务，默认端口为4000</span><br><span class="line">$ hexo s -p [port] // 修改端口号</span><br></pre></td></tr></table></figure>
-
-<h4 id="五、部署"><a href="#五、部署" class="headerlink" title="五、部署"></a>五、部署</h4><ul>
-<li><p>修改根目录下的 _config.yml文件：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    deploy:</span><br><span class="line">      type: git </span><br><span class="line">      repo: https:<span class="comment">//github.com/username/username.github.io.git // 博客的地址</span></span><br><span class="line">      branch: master <span class="comment">// 选择GitHubPages中设置的那个分支，而不是拉取这个项目的分支，一般为master</span></span><br><span class="line">      message: Blog <span class="comment">// 可自定义</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h4 id="六、写作和配置"><a href="#六、写作和配置" class="headerlink" title="六、写作和配置"></a>六、写作和配置</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt; // 创建新的博文</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>) <span class="comment">// 引入核心模块，不需要使用路径</span></span><br><span class="line"><span class="keyword">let</span> cicle = <span class="built_in">require</span>(<span class="string">'./cicle'</span>) <span class="comment">// 引入自定义模块，需要使用相对路径或绝对路径，可以省略后缀</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</span><br><span class="line"><span class="keyword">const</span> app = express()</span><br><span class="line">app.server = app.listen(<span class="number">3000</span>, () =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'服务正在启动...'</span>)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">module</span>.exports = app <span class="comment">// 导出模块</span></span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>菜单显示about链接，在主题的_config.yml设置中将menu中about前面的注释去掉即可。</li>
+<li>AMD规范采用异步方式加载模块，模块的加载不影响它后面语句的运行。所有以来这个模块的语句，都定义在一个回调函数中，等到加载完成后，这个回调函数才会运行。用<code>require.config()</code>指定引用路径，用<code>define()</code>定义模块，用<code>require()</code>加载模块。AMD规范没有使用过，就不举例子了。</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: <span class="regexp">/</span></span><br><span class="line"><span class="regexp">  archives: /</span>archives</span><br><span class="line">  tags: <span class="regexp">/tags</span></span><br><span class="line"><span class="regexp">  about: /</span>about</span><br></pre></td></tr></table></figure>
+<h4 id="ES6-module模块"><a href="#ES6-module模块" class="headerlink" title="ES6-module模块"></a>ES6-module模块</h4><p>es6的模块主要有两个命令构成：<code>export</code>和<code>import</code>。<code>export</code>命令用于规定模块的对外接口，<code>import</code>命令用于输入其他模块提供的功能。</p>
+<ul>
+<li><h5 id="export"><a href="#export" class="headerlink" title="export"></a>export</h5></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 逐个导出</span></span><br><span class="line"><span class="keyword">const</span> a = <span class="number">123</span></span><br><span class="line"><span class="keyword">export</span> a</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">let</span> b = <span class="number">456</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">789</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用大括号指定所要导出的一组变量</span></span><br><span class="line"><span class="keyword">const</span> first = <span class="string">'firstName'</span></span><br><span class="line"><span class="keyword">const</span> second = <span class="string">'secondName'</span></span><br><span class="line"><span class="keyword">const</span> bar = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'threeName'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> &#123; first, second, bar &#125;</span><br><span class="line"><span class="comment">// 使用as关键字重命名</span></span><br><span class="line"><span class="keyword">export</span> &#123;</span><br><span class="line">	v1 <span class="keyword">as</span> first,</span><br><span class="line">    v2 <span class="keyword">as</span> second,</span><br><span class="line">    v3 <span class="keyword">as</span> bar</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 为了给用户提供方便，不必阅读文档就能加载模块，需要用到export default命令，微模块指定默认输出。Enum.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    first, second, bar</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">import</span> Enum <span class="keyword">from</span> <span class="string">'./Enum'</span> <span class="comment">// 输入和使用</span></span><br><span class="line">Enum.first <span class="comment">// 'firstName'</span></span><br><span class="line">Enum.bar() <span class="comment">// threeName</span></span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>创建页面</li>
+<li><h5 id="import"><a href="#import" class="headerlink" title="import"></a>import</h5></li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page <span class="string">"about"</span> // <span class="string">"关于我"</span>页面</span><br><span class="line">$ hexo new page <span class="string">"categories"</span> // <span class="string">"分类"</span>页面</span><br><span class="line">$ hexo new page <span class="string">"tags"</span> // 创建标签云页面</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// import命令，用于加载Enum.js文件，并从中输入变量，import命令接受一对大括号，里面指定要从其他模块导入的变量名。大括号里面的变量名，必须与被导入模块中对外导出时的名称相同。</span></span><br><span class="line"><span class="keyword">import</span> &#123; first, second, bar &#125; <span class="keyword">from</span> <span class="string">'./Enum.js'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果想为输入的变量重新取名，使用as关键字对输入的变量重命名</span></span><br><span class="line"><span class="keyword">import</span> &#123; firstName <span class="keyword">as</span> oneName &#125; <span class="keyword">from</span> <span class="string">'./Enum.js'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 整体加载</span></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> Enum <span class="keyword">from</span> <span class="string">'./Enum'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// import具有提升效果，会提升到整个模块的头部，先执行。import是静态执行，所以不能使用表达式和变量。</span></span><br></pre></td></tr></table></figure>
 
 <ul>
-<li><p>设置侧边栏头像</p>
-<p>编辑主题的<code>_config.yml</code>文件，新增字段<code>avatar</code>，值设置成头像的链接地址。</p>
-<p>其中，头像的链接地址可以分为两种：</p>
-<p>1、完整的地址：例如：<code>https://avatars1.githubusercontent.com/u/32269?v=3&amp;s=460</code></p>
-<p>2、站内地址：例如：<code>source/img/avatar.jpg</code>需要将你的图片放置在主题的<code>source/img</code>文件夹下</p>
-</li>
-<li><p>设置加载更多</p>
-<p>要实现加载更多，只需要在文章开头写好摘要后，另起一行添加<!-- more -->即可</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">这是摘要</span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line">这是正文</span><br></pre></td></tr></table></figure>
-
-<p>如果想要修改加载更多的样式，打开主题中的_config.yml文件：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">excerpt_link: 阅读更多 <span class="comment">// 默认为more</span></span><br></pre></td></tr></table></figure>
-
-</li>
+<li>import()</li>
 </ul>
-<h4 id="七、踩坑经历"><a href="#七、踩坑经历" class="headerlink" title="七、踩坑经历"></a>七、踩坑经历</h4><h5 id="1、不蒜子网站统计报错"><a href="#1、不蒜子网站统计报错" class="headerlink" title="1、不蒜子网站统计报错"></a>1、不蒜子网站统计报错</h5><p>采用spfk这个主题，发现他利用不蒜子网站统计不显示，看到不蒜子的官方网站发出了这样的消息：</p>
-<p><img src="https://i.loli.net/2019/06/20/5d0b51950f72e26880.png" alt></p>
-<p>进入hexo博客项目的<code>themes</code>目录下，在<code>spfk/layout/share/after-footer.ejs</code>文件，将</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script <span class="keyword">async</span> src=<span class="string">"https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
-<p>更改为：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script <span class="keyword">async</span> src=<span class="string">"//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p><code>import()</code>函数用来完成动态加载，<code>import()</code>和<code>import</code>接受的参数相同，只不过<code>import()</code>函数可以动态加载。</p>
+<p><code>import()</code>返回一个Promise对象。<code>import()</code>类似于Node中使用的<code>require</code>方法，区别是<code>import()</code>是异步加载，而<code>require</code>是同步加载。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> main = <span class="built_in">document</span>.querySelector(<span class="string">'main'</span>)</span><br><span class="line"><span class="keyword">import</span>(<span class="string">`./section-modules/<span class="subst">$&#123;someVarable&#125;</span>.js`</span>).then(<span class="function"><span class="params">module</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">module</span>.loadPageInto(main)</span><br><span class="line">&#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">    main.textContent = err.message</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
 
       
@@ -335,13 +297,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/05/29/利用hexo搭建自己的博客/">利用hexo搭建自己的博客</a></p>
+        <p><span>本文标题:</span><a href="/2019/07/29/ES6-模块module篇/">ES6-模块module篇</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 LLstar 的个人博客">LLstar</a></p>
-        <p><span>发布时间:</span>2019年05月29日 - 15时19分</p>
-        <p><span>最后更新:</span>2019年10月06日 - 15时26分</p>
+        <p><span>发布时间:</span>2019年07月29日 - 18时14分</p>
+        <p><span>最后更新:</span>2019年11月11日 - 18时17分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/05/29/利用hexo搭建自己的博客/" title="利用hexo搭建自己的博客">http://yoursite.com/2019/05/29/利用hexo搭建自己的博客/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/05/29/利用hexo搭建自己的博客/　　作者: LLstar" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/07/29/ES6-模块module篇/" title="ES6-模块module篇">http://yoursite.com/2019/07/29/ES6-模块module篇/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/07/29/ES6-模块module篇/　　作者: LLstar" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -354,15 +316,20 @@
 
 <nav id="article-nav">
   
-    <a href="/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/08/06/react-electron-atnd搭建项目/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          eslint+husky+prettier+lint-staged配置前端代码校验规范
+          react+electron+atnd搭建项目
         
       </div>
     </a>
   
+  
+    <a href="/2019/07/18/js的多个时间段校验是否存在重合/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js的多个时间段校验是否存在重合</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
   
 </nav>
 
@@ -371,7 +338,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#快速开始"><span class="toc-number">2.</span> <span class="toc-text">快速开始</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、安装Git"><span class="toc-number">2.1.</span> <span class="toc-text">一、安装Git</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、安装-Node-js"><span class="toc-number">2.2.</span> <span class="toc-text">二、安装 Node.js</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、在GitHub上创建GitHub-Pages项目"><span class="toc-number">2.3.</span> <span class="toc-text">三、在GitHub上创建GitHub Pages项目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#四、安装并启动hexo"><span class="toc-number">2.4.</span> <span class="toc-text">四、安装并启动hexo</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#五、部署"><span class="toc-number">2.5.</span> <span class="toc-text">五、部署</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#六、写作和配置"><span class="toc-number">2.6.</span> <span class="toc-text">六、写作和配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#七、踩坑经历"><span class="toc-number">2.7.</span> <span class="toc-text">七、踩坑经历</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1、不蒜子网站统计报错"><span class="toc-number">2.7.1.</span> <span class="toc-text">1、不蒜子网站统计报错</span></a></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#CommonJS和AMD"><span class="toc-number">1.</span> <span class="toc-text">CommonJS和AMD</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ES6-module模块"><span class="toc-number">2.</span> <span class="toc-text">ES6-module模块</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#export"><span class="toc-number">2.1.</span> <span class="toc-text">export</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#import"><span class="toc-number">2.2.</span> <span class="toc-text">import</span></a></li></ol></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -422,13 +389,15 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/" title="上一篇: eslint+husky+prettier+lint-staged配置前端代码校验规范">
+            <a href="/2019/08/06/react-electron-atnd搭建项目/" title="上一篇: react+electron+atnd搭建项目">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2019/07/18/js的多个时间段校验是否存在重合/" title="下一篇: js的多个时间段校验是否存在重合">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
     <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/11/11/仿elementUI的周选择日历组件/">仿elementUI的周选择日历组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/06/利用elementUI实现一个可编辑的表格/">利用elementUI实现一个可编辑的表格</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/24/vue的mixins和slot/">vue的mixins和slot</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/06/react-electron-atnd搭建项目/">react+electron+atnd搭建项目</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/29/ES6-模块module篇/">ES6-模块module篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/18/js的多个时间段校验是否存在重合/">js的多个时间段校验是否存在重合</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/10/温故而知新-JavaScript数组常用API/">温故而知新--JavaScript数组常用API</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/22/vue插件从封装到发布npm包以及使用的全过程/">vue插件从封装到发布npm包以及使用的全过程</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/21/webpack的使用/">webpack的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/21/electron-vue利用webpack打包实现多页面的入口文件/">electron-vue利用webpack打包实现多页面的入口文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/">eslint+husky+prettier+lint-staged配置前端代码校验规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/29/利用hexo搭建自己的博客/">利用hexo搭建自己的博客</a></li></ul>

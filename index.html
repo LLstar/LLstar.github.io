@@ -445,6 +445,73 @@
 
 
   
+    <article id="post-ES6-模块module篇" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/07/29/ES6-模块module篇/" class="article-date">
+      <time datetime="2019-07-29T10:14:52.000Z" itemprop="datePublished">2019-07-29</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/29/ES6-模块module篇/">ES6-模块module篇</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>模块化的开发方式可以提高代码复用率，方便进行代码的管理。通常一个文件就是一个模块，有自己的作用域，只向外暴露特定的变量和函数。在js加入模块语法之前，我们通常所用的模块化规范有CommonJS和AMD。一直傻傻分不清什么时候用<code>require</code>，什么时候需要用<code>import</code>，感觉并没有什么区别，用什么都没有报错，看完ES6的模块讲解，来区分一下这两者的区别，整理一下这两者分别在什么场合使用。</p>
+<h4 id="CommonJS和AMD"><a href="#CommonJS和AMD" class="headerlink" title="CommonJS和AMD"></a>CommonJS和AMD</h4><ul>
+<li>Node.js中主要是用CommonJS规范，CommonJS有四个重要的环境变量为模块化的实现提供支持：<code>module</code>、<code>exports</code>、<code>require</code>、<code>global</code>。用<code>module.exports</code>定义当前模块对外输出的接口，用<code>require</code>加载模块。Common JS用同步的方式加载模块。</li>
+</ul>
+          
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6-module/">ES6 module</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2019/07/29/ES6-模块module篇/#more">小星星 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-js的多个时间段校验是否存在重合" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -764,71 +831,6 @@
       
         <p class="article-more-link">
           <a  href="/2019/06/21/electron-vue利用webpack打包实现多页面的入口文件/#more">小星星 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-eslint-husky-prettier-lint-staged配置前端代码校验规范" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/" class="article-date">
-      <time datetime="2019-05-30T04:06:26.584Z" itemprop="datePublished">2019-05-30</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/">eslint+husky+prettier+lint-staged配置前端代码校验规范</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>当团队中多人协作时，因为同事之间不同的代码风格和编辑器，会导致项目的代码无法统一风格，不利于阅读，也更容易造成bug，为统一项目中代码的风格，减少书写上的bug，所以整理了一下利用 eslint+husky+prettier+lint-staged来配置前端代码规范。</p>
-<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><h4 id="npm包安装"><a href="#npm包安装" class="headerlink" title="npm包安装"></a>npm包安装</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm i -D eslint prettier eslint-plugin-prettier eslint-config-prettier husky lint-staged</span><br><span class="line">$ yarn add eslint prettier eslint-plugin-prettier eslint-config-prettier husky lint-staged -D</span><br></pre></td></tr></table></figure>
-          
-      
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/前端配置/">前端配置</a>
-    </div>
-
-
-      
-      
-        <p class="article-more-link">
-          <a  href="/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/#more">小星星 >></a>
         </p>
       
       <div class="clearfix"></div>
