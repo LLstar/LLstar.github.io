@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>JS设计模式之策略模式 | LLstar的个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="策略模式的定义是：定义一系列的算法，把他们一个个封装起来，并且使他们可以相互替换。 策略模式的优点：  策略模式利用组合、委托等技术和思想，有效的避免很多if条件语句； 策略模式提供了开放-封闭原则，使代码更容易理解和扩展； 策略模式中的代码可以复用；  使用场景：比如公司的年终奖是根据员工的工资和绩效来考核的，绩效为A的人，年终奖为工资的4倍，绩效为B的人，年终奖为工资的3倍，绩效为C的人，年终">
+<meta name="keywords" content="JS 设计模式 策略模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS设计模式之策略模式">
+<meta property="og:url" content="http://yoursite.com/2019/07/02/JS设计模式之策略模式/index.html">
+<meta property="og:site_name" content="LLstar的个人博客">
+<meta property="og:description" content="策略模式的定义是：定义一系列的算法，把他们一个个封装起来，并且使他们可以相互替换。 策略模式的优点：  策略模式利用组合、委托等技术和思想，有效的避免很多if条件语句； 策略模式提供了开放-封闭原则，使代码更容易理解和扩展； 策略模式中的代码可以复用；  使用场景：比如公司的年终奖是根据员工的工资和绩效来考核的，绩效为A的人，年终奖为工资的4倍，绩效为B的人，年终奖为工资的3倍，绩效为C的人，年终">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-12-10T02:53:39.755Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS设计模式之策略模式">
+<meta name="twitter:description" content="策略模式的定义是：定义一系列的算法，把他们一个个封装起来，并且使他们可以相互替换。 策略模式的优点：  策略模式利用组合、委托等技术和思想，有效的避免很多if条件语句； 策略模式提供了开放-封闭原则，使代码更容易理解和扩展； 策略模式中的代码可以复用；  使用场景：比如公司的年终奖是根据员工的工资和绩效来考核的，绩效为A的人，年终奖为工资的4倍，绩效为B的人，年终奖为工资的3倍，绩效为C的人，年终">
+  
+    <link rel="alternative" href="/atom.xml" title="LLstar的个人博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet">
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: false,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+</html>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img src="/img/head.jpg" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">LLstar</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">welcome to my blog!</p>
+        
+        
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">Home</a></li>
+                        
+                            <li><a href="/about/">About</a></li>
+                        
+                            <li><a href="/archives/">Archives</a></li>
+                        
+                            <li><a href="/tags/">Tags</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/LLstar" title="github">github</a>
+                            
+                                <a class="fl weibo" target="_blank" href="#" title="weibo">weibo</a>
+                            
+                                <a class="fl QQ" target="_blank" href="#" title="QQ">QQ</a>
+                            
+                                <a class="fl wechat" target="_blank" href="#" title="wechat">wechat</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://LLstar.github.io/">name</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">纯海迷、爱运动、爱交友、爱旅行、喜欢接触新鲜事物、迎接新的挑战，更爱游离于错综复杂的编码与逻辑中</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">LLstar</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img src="/img/head.jpg" class="js-avatar" style="width: 100%; height: 100%; opacity: 1;">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">LLstar</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">welcome to my blog!</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">Home</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/tags/">Tags</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="https://github.com/LLstar" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="#" title="weibo">weibo</a>
+                    
+                        <a class="QQ" target="_blank" href="#" title="QQ">QQ</a>
+                    
+                        <a class="wechat" target="_blank" href="#" title="wechat">wechat</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-JS设计模式之策略模式" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/07/02/JS设计模式之策略模式/" class="article-date">
+      <time datetime="2019-07-02T02:51:55.000Z" itemprop="datePublished">2019-07-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JS设计模式之策略模式
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JS-设计模式-策略模式/">JS 设计模式 策略模式</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>策略模式的定义是：定义一系列的算法，把他们一个个封装起来，并且使他们可以相互替换。</p>
+<p>策略模式的优点：</p>
+<ul>
+<li>策略模式利用组合、委托等技术和思想，有效的避免很多if条件语句；</li>
+<li>策略模式提供了开放-封闭原则，使代码更容易理解和扩展；</li>
+<li>策略模式中的代码可以复用；</li>
+</ul>
+<p>使用场景：比如公司的年终奖是根据员工的工资和绩效来考核的，绩效为A的人，年终奖为工资的4倍，绩效为B的人，年终奖为工资的3倍，绩效为C的人，年终奖为工资的2倍；按照一般的编码方式，代码如下：</p>
+<a id="more"></a>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> calculateBouns = <span class="function"><span class="keyword">function</span>(<span class="params">salary, level</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(level === <span class="string">'A'</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> salary * <span class="number">4</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(level === <span class="string">'B'</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> salary * <span class="number">3</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(level === <span class="string">'C'</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> salary * <span class="number">2</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(calculateBouns(<span class="number">4000</span>, <span class="string">'A'</span>)); <span class="comment">// 16000</span></span><br><span class="line"><span class="built_in">console</span>.log(calculateBouns(<span class="number">3000</span>, <span class="string">'B'</span>)); <span class="comment">// 9000</span></span><br><span class="line"><span class="comment">// 第一个参数为薪资，第二个参数为等级</span></span><br></pre></td></tr></table></figure>
+
+<p>上面的代码中包含了很多if-else的条件语句；缺乏可扩展性，假如还有D等级的话，还需要在calculateBouns函数内添加判断等级D的if语句；同时算法的复用性差，如果在其他的地方也有类似这样的算法，但是规则不一样，代码就不能通用。</p>
+<p>使用JavaScript的策略模式：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    <span class="string">"A"</span>: <span class="function"><span class="keyword">function</span>(<span class="params">salary</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> salary * <span class="number">4</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"B"</span>: <span class="function"><span class="keyword">function</span>(<span class="params">salary</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> salary * <span class="number">3</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"C"</span>: <span class="function"><span class="keyword">function</span>(<span class="params">salary</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> salary * <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以看到代码更加简单明了；策略模式指的是定义一系列的算法，并且把他们封装起来，但是策略模式不仅仅只封装算法，我们还可以对用来封装一系列的业务规则，只要这些业务规则目标一致，我们就可以使用策略模式来封装他们。</p>
+<p><strong>表单效验</strong></p>
+<p>比如我们经常来进行表单验证，比如注册登录对话框，我们登录之前要进行验证操作：比如有以下几条逻辑：</p>
+<p>用户名不能为空</p>
+<p>密码长度不能小于6位。</p>
+<p>手机号码必须符合格式。</p>
+<p>比如HTML代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action = &quot;http://www.baidu.com&quot; id=&quot;registerForm&quot; method = &quot;post&quot;&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            &lt;label&gt;请输入用户名：&lt;/label&gt;</span><br><span class="line">            &lt;input type=&quot;text&quot; name=&quot;userName&quot;/&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            &lt;label&gt;请输入密码：&lt;/label&gt;</span><br><span class="line">            &lt;input type=&quot;text&quot; name=&quot;password&quot;/&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">        &lt;p&gt;</span><br><span class="line">            &lt;label&gt;请输入手机号码：&lt;/label&gt;</span><br><span class="line">            &lt;input type=&quot;text&quot; name=&quot;phoneNumber&quot;/&gt;</span><br><span class="line">        &lt;/p&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+
+<p>我们正常的编写表单验证代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var registerForm = document.getElementById(&quot;registerForm&quot;);</span><br><span class="line">registerForm.onsubmit = function()&#123;</span><br><span class="line">    if(registerForm.userName.value === &apos;&apos;) &#123;</span><br><span class="line">        alert(&apos;用户名不能为空&apos;);</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    if(registerForm.password.value.length &lt; 6) &#123;</span><br><span class="line">        alert(&quot;密码的长度不能小于6位&quot;);</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    if(!/(^1[3|5|8][0-9]&#123;9&#125;$)/.test(registerForm.phoneNumber.value)) &#123;</span><br><span class="line">        alert(&quot;手机号码格式不正确&quot;);</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>但是这样编写代码有如下缺点：</p>
+<p>1.registerForm.onsubmit 函数比较大，代码中包含了很多if语句；</p>
+<p>2.registerForm.onsubmit 函数缺乏弹性，如果增加了一种新的效验规则，或者想把密码的长度效验从6改成8，我们必须改registerForm.onsubmit 函数内部的代码。违反了开放-封闭原则。</p>
+<p>\3. 算法的复用性差，如果在程序中增加了另外一个表单，这个表单也需要进行一些类似的效验，那么我们可能又需要复制代码了；</p>
+<p>下面我们可以使用策略模式来重构表单效验；</p>
+<p>第一步我们先来封装策略对象；如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">var strategy = &#123;</span><br><span class="line">    isNotEmpty: function(value,errorMsg) &#123;</span><br><span class="line">        if(value === &apos;&apos;) &#123;</span><br><span class="line">            return errorMsg;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    // 限制最小长度</span><br><span class="line">    minLength: function(value,length,errorMsg) &#123;</span><br><span class="line">        if(value.length &lt; length) &#123;</span><br><span class="line">            return errorMsg;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    // 手机号码格式</span><br><span class="line">    mobileFormat: function(value,errorMsg) &#123;</span><br><span class="line">        if(!/(^1[3|5|8][0-9]&#123;9&#125;$)/.test(value)) &#123;</span><br><span class="line">            return errorMsg;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>接下来我们准备实现Validator类，Validator类在这里作为Context，负责接收用户的请求并委托给strategy 对象，如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">var Validator = function()&#123;</span><br><span class="line">    this.cache = [];  // 保存效验规则</span><br><span class="line">&#125;;</span><br><span class="line">Validator.prototype.add = function(dom,rule,errorMsg) &#123;</span><br><span class="line">    var str = rule.split(&quot;:&quot;);</span><br><span class="line">    this.cache.push(function()&#123;</span><br><span class="line">        // str 返回的是 minLength:6 </span><br><span class="line">        var strategy = str.shift();</span><br><span class="line">        str.unshift(dom.value); // 把input的value添加进参数列表</span><br><span class="line">        str.push(errorMsg);  // 把errorMsg添加进参数列表</span><br><span class="line">        return strategys[strategy].apply(dom,str);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;;</span><br><span class="line">Validator.prototype.start = function()&#123;</span><br><span class="line">    for(var i = 0, validatorFunc; validatorFunc = this.cache[i++]; ) &#123;</span><br><span class="line">        var msg = validatorFunc(); // 开始效验 并取得效验后的返回信息</span><br><span class="line">        if(msg) &#123;</span><br><span class="line">            return msg;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>Validator类在这里作为Context，负责接收用户的请求并委托给strategys对象。上面的代码中，我们先创建一个Validator对象，然后通过validator.add方法往validator对象中添加一些效验规则，validator.add方法接收3个参数，如下代码：</p>
+<p>validator.add(registerForm.password,’minLength:6’,’密码长度不能小于6位’);</p>
+<p>registerForm.password 为效验的input输入框dom节点；</p>
+<p>minLength:6： 是以一个冒号隔开的字符串，冒号前面的minLength代表客户挑选的strategys对象，冒号后面的数字6表示在效验过程中所必须验证的参数，minLength:6的意思是效验 registerForm.password 这个文本输入框的value最小长度为6位；如果字符串中不包含冒号，说明效验过程中不需要额外的效验信息；</p>
+<p>第三个参数是当效验未通过时返回的错误信息；</p>
+<p>当我们往validator对象里添加完一系列的效验规则之后，会调用validator.start()方法来启动效验。如果validator.start()返回了一个errorMsg字符串作为返回值，说明该次效验没有通过，此时需要registerForm.onsubmit方法返回false来阻止表单提交。下面我们来看看初始化代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var validateFunc = function()&#123;</span><br><span class="line">    var validator = new Validator(); // 创建一个Validator对象</span><br><span class="line">    /* 添加一些效验规则 */</span><br><span class="line">    validator.add(registerForm.userName,&apos;isNotEmpty&apos;,&apos;用户名不能为空&apos;);</span><br><span class="line">    validator.add(registerForm.password,&apos;minLength:6&apos;,&apos;密码长度不能小于6位&apos;);</span><br><span class="line">    validator.add(registerForm.userName,&apos;mobileFormat&apos;,&apos;手机号码格式不正确&apos;);</span><br><span class="line"></span><br><span class="line">    var errorMsg = validator.start(); // 获得效验结果</span><br><span class="line">    return errorMsg; // 返回效验结果</span><br><span class="line">&#125;;</span><br><span class="line">var registerForm = document.getElementById(&quot;registerForm&quot;);</span><br><span class="line">registerForm.onsubmit = function()&#123;</span><br><span class="line">    var errorMsg = validateFunc();</span><br><span class="line">    if(errorMsg)&#123;</span><br><span class="line">        alert(errorMsg);</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>下面是所有的代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">var strategys = &#123;</span><br><span class="line">    isNotEmpty: function(value,errorMsg) &#123;</span><br><span class="line">        if(value === &apos;&apos;) &#123;</span><br><span class="line">            return errorMsg;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    // 限制最小长度</span><br><span class="line">    minLength: function(value,length,errorMsg) &#123;</span><br><span class="line">        if(value.length &lt; length) &#123;</span><br><span class="line">            return errorMsg;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    // 手机号码格式</span><br><span class="line">    mobileFormat: function(value,errorMsg) &#123;</span><br><span class="line">        if(!/(^1[3|5|8][0-9]&#123;9&#125;$)/.test(value)) &#123;</span><br><span class="line">            return errorMsg;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;;</span><br><span class="line">var Validator = function()&#123;</span><br><span class="line">    this.cache = [];  // 保存效验规则</span><br><span class="line">&#125;;</span><br><span class="line">Validator.prototype.add = function(dom,rule,errorMsg) &#123;</span><br><span class="line">    var str = rule.split(&quot;:&quot;);</span><br><span class="line">    this.cache.push(function()&#123;</span><br><span class="line">        // str 返回的是 minLength:6 </span><br><span class="line">        var strategy = str.shift();</span><br><span class="line">        str.unshift(dom.value); // 把input的value添加进参数列表</span><br><span class="line">        str.push(errorMsg);  // 把errorMsg添加进参数列表</span><br><span class="line">        return strategys[strategy].apply(dom,str);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;;</span><br><span class="line">Validator.prototype.start = function()&#123;</span><br><span class="line">    for(var i = 0, validatorFunc; validatorFunc = this.cache[i++]; ) &#123;</span><br><span class="line">        var msg = validatorFunc(); // 开始效验 并取得效验后的返回信息</span><br><span class="line">        if(msg) &#123;</span><br><span class="line">            return msg;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var validateFunc = function()&#123;</span><br><span class="line">    var validator = new Validator(); // 创建一个Validator对象</span><br><span class="line">    /* 添加一些效验规则 */</span><br><span class="line">    validator.add(registerForm.userName,&apos;isNotEmpty&apos;,&apos;用户名不能为空&apos;);</span><br><span class="line">    validator.add(registerForm.password,&apos;minLength:6&apos;,&apos;密码长度不能小于6位&apos;);</span><br><span class="line">    validator.add(registerForm.userName,&apos;mobileFormat&apos;,&apos;手机号码格式不正确&apos;);</span><br><span class="line"></span><br><span class="line">    var errorMsg = validator.start(); // 获得效验结果</span><br><span class="line">    return errorMsg; // 返回效验结果</span><br><span class="line">&#125;;</span><br><span class="line">var registerForm = document.getElementById(&quot;registerForm&quot;);</span><br><span class="line">registerForm.onsubmit = function()&#123;</span><br><span class="line">    var errorMsg = validateFunc();</span><br><span class="line">    if(errorMsg)&#123;</span><br><span class="line">        alert(errorMsg);</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>如上使用策略模式来编写表单验证代码可以看到好处了，我们通过add配置的方式就完成了一个表单的效验；这样的话，那么代码可以当做一个组件来使用，并且可以随时调用，在修改表单验证规则的时候，也非常方便，通过传递参数即可调用；</p>
+<p>给某个文本输入框添加多种效验规则，上面的代码我们可以看到，我们只是给输入框只能对应一种效验规则，比如上面的我们只能效验输入框是否为空，validator.add(registerForm.userName,’isNotEmpty’,’用户名不能为空’);但是如果我们既要效验输入框是否为空，还要效验输入框的长度不要小于10位的话，那么我们期望需要像如下传递参数：</p>
+<p>validator.add(registerForm.userName,[{strategy:’isNotEmpty’,errorMsg:’用户名不能为空’}，{strategy: ‘minLength:6’,errorMsg:’用户名长度不能小于6位’}])</p>
+<p>我们可以编写代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line">// 策略对象</span><br><span class="line">var strategys = &#123;</span><br><span class="line">    isNotEmpty: function(value,errorMsg) &#123;</span><br><span class="line">        if(value === &apos;&apos;) &#123;</span><br><span class="line">            return errorMsg;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    // 限制最小长度</span><br><span class="line">    minLength: function(value,length,errorMsg) &#123;</span><br><span class="line">        if(value.length &lt; length) &#123;</span><br><span class="line">            return errorMsg;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    // 手机号码格式</span><br><span class="line">    mobileFormat: function(value,errorMsg) &#123;</span><br><span class="line">        if(!/(^1[3|5|8][0-9]&#123;9&#125;$)/.test(value)) &#123;</span><br><span class="line">            return errorMsg;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;;</span><br><span class="line">var Validator = function()&#123;</span><br><span class="line">    this.cache = [];  // 保存效验规则</span><br><span class="line">&#125;;</span><br><span class="line">Validator.prototype.add = function(dom,rules) &#123;</span><br><span class="line">    var self = this;</span><br><span class="line">    for(var i = 0, rule; rule = rules[i++]; )&#123;</span><br><span class="line">        (function(rule)&#123;</span><br><span class="line">            var strategyAry = rule.strategy.split(&quot;:&quot;);</span><br><span class="line">            var errorMsg = rule.errorMsg;</span><br><span class="line">            self.cache.push(function()&#123;</span><br><span class="line">                var strategy = strategyAry.shift();</span><br><span class="line">                strategyAry.unshift(dom.value);</span><br><span class="line">                strategyAry.push(errorMsg);</span><br><span class="line">                return strategys[strategy].apply(dom,strategyAry);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;)(rule);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">Validator.prototype.start = function()&#123;</span><br><span class="line">    for(var i = 0, validatorFunc; validatorFunc = this.cache[i++]; ) &#123;</span><br><span class="line">    var msg = validatorFunc(); // 开始效验 并取得效验后的返回信息</span><br><span class="line">    if(msg) &#123;</span><br><span class="line">        return msg;</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">// 代码调用</span><br><span class="line">var registerForm = document.getElementById(&quot;registerForm&quot;);</span><br><span class="line">var validateFunc = function()&#123;</span><br><span class="line">    var validator = new Validator(); // 创建一个Validator对象</span><br><span class="line">    /* 添加一些效验规则 */</span><br><span class="line">    validator.add(registerForm.userName,[</span><br><span class="line">        &#123;strategy: &apos;isNotEmpty&apos;,errorMsg:&apos;用户名不能为空&apos;&#125;,</span><br><span class="line">        &#123;strategy: &apos;minLength:6&apos;,errorMsg:&apos;用户名长度不能小于6位&apos;&#125;</span><br><span class="line">    ]);</span><br><span class="line">    validator.add(registerForm.password,[</span><br><span class="line">        &#123;strategy: &apos;minLength:6&apos;,errorMsg:&apos;密码长度不能小于6位&apos;&#125;,</span><br><span class="line">    ]);</span><br><span class="line">    validator.add(registerForm.phoneNumber,[</span><br><span class="line">        &#123;strategy: &apos;mobileFormat&apos;,errorMsg:&apos;手机号格式不正确&apos;&#125;,</span><br><span class="line">    ]);</span><br><span class="line">    var errorMsg = validator.start(); // 获得效验结果</span><br><span class="line">    return errorMsg; // 返回效验结果</span><br><span class="line">&#125;;</span><br><span class="line">// 点击确定提交</span><br><span class="line">registerForm.onsubmit = function()&#123;</span><br><span class="line">    var errorMsg = validateFunc();</span><br><span class="line">    if(errorMsg)&#123;</span><br><span class="line">        alert(errorMsg);</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：</strong>如上代码都是按照书上来做的，都是看到书的代码，最主要我们理解策略模式实现，比如上面的表单验证功能是这样封装的代码，我们平时使用jquery插件表单验证代码原来是这样封装的，为此我们以后也可以使用这种方式来封装表单等学习。</p>
+
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2019/07/02/JS设计模式之策略模式/">JS设计模式之策略模式</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 LLstar 的个人博客">LLstar</a></p>
+        <p><span>发布时间:</span>2019年07月02日 - 10时51分</p>
+        <p><span>最后更新:</span>2019年12月10日 - 10时53分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2019/07/02/JS设计模式之策略模式/" title="JS设计模式之策略模式">http://yoursite.com/2019/07/02/JS设计模式之策略模式/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/07/02/JS设计模式之策略模式/　　作者: LLstar" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2019/07/10/温故而知新-JavaScript数组常用API/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          温故而知新--JavaScript数组常用API
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/06/22/vue插件从封装到发布npm包以及使用的全过程/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue插件从封装到发布npm包以及使用的全过程</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2019/07/10/温故而知新-JavaScript数组常用API/" title="上一篇: 温故而知新--JavaScript数组常用API">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2019/06/22/vue插件从封装到发布npm包以及使用的全过程/" title="下一篇: vue插件从封装到发布npm包以及使用的全过程">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/11/11/仿elementUI的周选择日历组件/">仿elementUI的周选择日历组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/10/06/利用elementUI实现一个可编辑的表格/">利用elementUI实现一个可编辑的表格</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/24/vue的mixins和slot/">vue的mixins和slot</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/08/06/react-electron-atnd搭建项目/">react+electron+atnd搭建项目</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/29/ES6-模块module篇/">ES6-模块module篇</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/18/js的多个时间段校验是否存在重合/">js的多个时间段校验是否存在重合</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/10/温故而知新-JavaScript数组常用API/">温故而知新--JavaScript数组常用API</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/07/02/JS设计模式之策略模式/">JS设计模式之策略模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/22/vue插件从封装到发布npm包以及使用的全过程/">vue插件从封装到发布npm包以及使用的全过程</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/21/webpack的使用/">webpack的使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/21/electron-vue利用webpack打包实现多页面的入口文件/">electron-vue利用webpack打包实现多页面的入口文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/30/eslint-husky-prettier-lint-staged配置前端代码校验规范/">eslint+husky+prettier+lint-staged配置前端代码校验规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/05/29/利用hexo搭建自己的博客/">利用hexo搭建自己的博客</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2019 LLstar
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >星星到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+
+  </div>
+</body>
+</html>

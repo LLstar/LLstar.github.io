@@ -178,6 +178,78 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-electron-vue利用webpack打包实现多页面的入口文件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/06/21/electron-vue利用webpack打包实现多页面的入口文件/" class="article-date">
+      <time datetime="2019-06-21T08:11:00.000Z" itemprop="datePublished">2019-06-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/21/electron-vue利用webpack打包实现多页面的入口文件/">electron-vue利用webpack打包实现多页面的入口文件</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>项目需要在electron的项目中新打开一个窗口，利用webpack作为静态资源打包器，发现在webpack中可以设置多页面的入口，今天来讲一下我在electron中利用webpack建立多页面入口的踩坑经验。</p>
+<h4 id="1、webpack的核心概念"><a href="#1、webpack的核心概念" class="headerlink" title="1、webpack的核心概念"></a>1、webpack的核心概念</h4><ul>
+<li>Entry：入口，Webpack执行构建的第一步从Entry开始；</li>
+<li>Module：模块，在Webpack里一切皆模块，一个模块对应着一个文件。Webpack会从配置的Entry开始递归找出所有依赖的模块。</li>
+<li>Chunk：代码块，一个Chunk由多个模块组合而成，用于代码合并与分割。</li>
+<li>Loader：模块转换器，用于把模块原内容按照需求转换成新内容。</li>
+<li>Plugin：扩展插件，在Webpack构建流程中的特定时机注入扩展逻辑来改变构建结果或做你想要的事情。</li>
+<li>Output：输出结果，在Webpack经过一系列处理并得出最终想要的代码后输出结果。</li>
+</ul>
+          
+      
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack-electron/">webpack electron</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2019/06/21/electron-vue利用webpack打包实现多页面的入口文件/#more">小星星 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-eslint-husky-prettier-lint-staged配置前端代码校验规范" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
