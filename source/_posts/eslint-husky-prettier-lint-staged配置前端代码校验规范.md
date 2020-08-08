@@ -1,6 +1,11 @@
 ---
 title: eslint+husky+prettier+lint-staged配置前端代码校验规范
-categories: 前端配置
+date: 2019-12-21 16:11:00
+categories:
+- 前端配置
+tags:
+- 代码规范
+copyright: true
 ---
 当团队中多人协作时，因为同事之间不同的代码风格和编辑器，会导致项目的代码无法统一风格，不利于阅读，也更容易造成bug，为统一项目中代码的风格，减少书写上的bug，所以整理了一下利用 eslint+husky+prettier+lint-staged来配置前端代码规范。
 
@@ -150,7 +155,7 @@ module.exports = {
   useTabs: false, // 使用tab(制表位)缩进而非空格
   semi: false,  // 使用分号结尾，默认为true
   singleQuote: true, // 使用单引号，在jsx语法中，所有引号均为双引号，改设置在jsx中被自动忽略
-  trailingComma: 'none',  // 行尾逗号，默认none,可选none|es5|all    
+  trailingComma: 'none',  // 行尾逗号，默认none,可选none|es5|all
     // none 无尾逗号
     // es5 添加es5中被支持的尾逗号
     // all 所有可能的地方都被添加尾逗号

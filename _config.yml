@@ -4,21 +4,21 @@
 
 # Site
 title: LLstar的个人博客
-subtitle: welcome to my blog!
-description: 前端学习的心路历程
+subtitle: 世间所有的美好，背后都是一份认真的努力
+description: 前端爬坑的心路历程
 keywords:
 author: LLstar
-language:
+language: zh-Hans
 timezone:
 
-# URL
+# URL 设置 hexo 永久链接
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://yoursite.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
-# Directory
+# Directory 文件目录
 source_dir: source
 public_dir: public
 tag_dir: tags
@@ -73,7 +73,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: spfk
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -82,3 +82,27 @@ deploy:
   repo: https://github.com/LLstar/LLstar.github.io.git
   branch: master
   message: my-blog
+
+# 外部链接优化
+nofollow:
+  enable: true
+  field: site
+  exclude:
+    - 'exclude1.com'
+    - 'exclude2.com'
+
+# 本地搜索
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 100
+
+# 字数统计、阅读时长
+symbols_count_time:
+ #文章内是否显示
+  symbols: true
+  time: true
+ # 网页底部是否显示
+  total_symbols: true
+  total_time: true

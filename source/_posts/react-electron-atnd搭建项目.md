@@ -1,7 +1,12 @@
 ---
 title: react+electron+atnd搭建项目
 date: 2019-08-06 16:19:05
-tags: react electron
+tags:
+- react
+- electron
+categories:
+- react
+copyright: true
 ---
 
 #### 按需引入antd组件
@@ -9,7 +14,7 @@ tags: react electron
 1、引入
 
 ```javascript
-yarn add antd react-app-rewired babel-plugin-import 
+yarn add antd react-app-rewired babel-plugin-import
 // antd 样式组件
 // react-app-rewired 自定义配置react项目的工具
 // babel-plugin-import 一个按需加载代码、样式的babel插件
@@ -238,7 +243,7 @@ $ yarn add @babel/plugin-proposal-decorators -D
 之后需要执行：
 
 ```bash
-$ yarn eject 
+$ yarn eject
 ```
 
 执行完之后可能会报错，找不到某些模块，按需添加这些模块就可以，执行完命令之后，babel的这个配置会被覆盖，重新再讲上述代码替换到，重新运行就可以了。

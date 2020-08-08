@@ -1,7 +1,11 @@
 ---
 title: 利用hexo搭建自己的博客
 date: 2019-5-29 15:19:48
-categories: hexo
+tags:
+- Hexo
+categories:
+- 工具类
+copyright: true
 ---
 ### 前言
 
@@ -22,8 +26,8 @@ hexo是一个快速、简洁且高效的博客框架(官网介绍)。[hexo官网
 
 #### 二、安装 Node.js
 
-- 安装 Node.js 的最佳方式是使用 [nvm](https://github.com/creationix/nvm)。 
-- 或者您也可以下载 [安装程序](http://nodejs.org/) 来安装。 
+- 安装 Node.js 的最佳方式是使用 [nvm](https://github.com/creationix/nvm)。
+- 或者您也可以下载 [安装程序](http://nodejs.org/) 来安装。
 
 #### 三、在GitHub上创建GitHub Pages项目
 
@@ -44,12 +48,12 @@ hexo是一个快速、简洁且高效的博客框架(官网介绍)。[hexo官网
 #### 四、安装并启动hexo
 
 ```bash
-$ npm install -g hexo 
+$ npm install -g hexo
 $ yarn add global hexo // 全局安装hexo
 // 手动创建一个文件夹，我的文件夹为Blog
 $ cd Blog
 $ hexo init 初始化项目，新建一个网站
-$ hexo install 
+$ hexo install
 $ hexo gengerate // 简写：hexo g 生成静态网页
 $ hexo server // 简写：hexo s 启动本地服务，默认端口为4000
 $ hexo s -p [port] // 修改端口号
@@ -62,7 +66,7 @@ $ hexo s -p [port] // 修改端口号
   ```javascript
   {
       deploy:
-        type: git 
+        type: git
         repo: https://github.com/username/username.github.io.git // 博客的地址
         branch: master // 选择GitHubPages中设置的那个分支，而不是拉取这个项目的分支，一般为master
         message: Blog // 可自定义
@@ -139,4 +143,3 @@ $ hexo new page "tags" // 创建标签云页面
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
 ```
-

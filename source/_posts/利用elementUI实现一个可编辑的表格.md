@@ -1,7 +1,12 @@
 ---
 title: 利用elementUI实现一个可编辑的表格
 date: 2019-10-06 15:19:48
-tags: vue element-ui
+tags:
+- vue
+- element-ui
+categories:
+- Web前端
+copyright: true
 ---
 
 在使用ElementUI过程中，表格的使用占了很大一部分，但是ElementUI的表格只能实现单纯的展示功能，并不能在展示表格的同时实现表格中单元格的可编辑功能，但是在业务中又需要用到可编辑的表格，于是将ElementUI中的表格和表单结合起来，实现了一个带有表单验证的可编辑表格，刚好可以满足业务需要，同时又方便了表格的使用。

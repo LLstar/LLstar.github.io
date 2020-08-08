@@ -1,7 +1,11 @@
 ---
 title: vue的mixins和slot
 date: 2019-08-24 10:09:19
-tags: vue
+tags:
+- Vue
+categories:
+- Vue.js
+copyright: true
 ---
 
 ### vue的混入mixins

@@ -1,7 +1,12 @@
 ---
 title: vue插件从封装到发布npm包以及使用的全过程
 date: 2019-06-22 17:38:19
-tags: vue npm
+tags:
+- Vue
+- npm
+categories:
+- npm
+copyright: true
 ---
 
 #### 封装vue插件

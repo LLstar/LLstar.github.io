@@ -1,7 +1,12 @@
 ---
 title: electron-vue利用webpack打包实现多页面的入口文件
 date: 2019-06-21 16:11:00
-tags: webpack electron
+tags:
+- webpack
+- electron
+categories:
+- electron打包
+copyright: true
 ---
 
 项目需要在electron的项目中新打开一个窗口，利用webpack作为静态资源打包器，发现在webpack中可以设置多页面的入口，今天来讲一下我在electron中利用webpack建立多页面入口的踩坑经验。
@@ -54,7 +59,7 @@ webpack中的HtmlWebpackPlugin插件是用来简单创建HTML文件，用于服�
 
   其实我也没太懂这些都是什么，反正据我理解，url加载的只能是远程地址(如：http://)或是本地的HTML文件路径(file://)
 
-  参考文章：<https://segmentfault.com/a/1190000014984842#articleHeader0> 
+  参考文章：<https://segmentfault.com/a/1190000014984842#articleHeader0>
 
 - ##### 打包报错
 
@@ -77,7 +82,7 @@ webpack中的HtmlWebpackPlugin插件是用来简单创建HTML文件，用于服�
 },
 ```
 
-参考文章：<https://segmentfault.com/a/1190000010437948> 
+参考文章：<https://segmentfault.com/a/1190000010437948>
 
 #### 3、多个窗口之间可以利用vuex-electron插件实现数据共享
 

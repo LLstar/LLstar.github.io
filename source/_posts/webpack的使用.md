@@ -1,7 +1,11 @@
 ---
 title: webpack的使用
 date: 2019-06-21 16:12:40
-tags: webpack
+tags:
+- webpack
+categories:
+- webpack
+copyright: true
 ---
 
 #### 一、前端环境搭建
@@ -25,7 +29,7 @@ $ npm init -y // -y 默认所有的配置
 ```javascript
 "scripts": {
     //我们在这里配置，就可以使用npm run build 启动我们的webpack
-    "build": "webpack --mode production" 
+    "build": "webpack --mode production"
   },
   "devDependencies": {
     "webpack": "^4.16.0",
@@ -108,7 +112,7 @@ var webpack = require('webpack');
 var glob = require('glob');
 
 //webpack插件,用于分离项目中的css文件
-var ExtractTextPlugin = require('extract-text-webpack-plugin'); 
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
  //webpack插件，用于生成HTML文件
 var HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -150,7 +154,7 @@ output: {
 resolve: {
     // 模块别名
     alias:{
-        xyz: "/absolute/path/to/file.js" 
+        xyz: "/absolute/path/to/file.js"
     }，
     // 配置项，设置可以忽略的文件后缀
     extensions: ['', '.js', '.less', '.css', '.png', '.jpg']
@@ -231,4 +235,4 @@ webpack-dev-server是webpack提供的静态资源服务器，它的存在使得�
 
 
 
-##### webpack的机制详解，参考文章：<https://juejin.im/post/5aa3d2056fb9a028c36868aa#heading-1> 
+##### webpack的机制详解，参考文章：<https://juejin.im/post/5aa3d2056fb9a028c36868aa#heading-1>
